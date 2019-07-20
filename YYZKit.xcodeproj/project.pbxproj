@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE2994DB22E1C4B80003D5BE /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2994DA22E1C4B80003D5BE /* YYZSearchView.m */; };
+		CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBCC88022E34E4600038041 /* YYZSearchView.m */; };
 		CEE12DAF22E0AC22008FC702 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DAE22E0AC22008FC702 /* AppDelegate.m */; };
 		CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DB122E0AC22008FC702 /* ViewController.m */; };
 		CEE12DB522E0AC22008FC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE12DB322E0AC22008FC702 /* Main.storyboard */; };
@@ -29,8 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE2994D922E1C4B70003D5BE /* YYZSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZSearchView.h; sourceTree = "<group>"; };
-		CE2994DA22E1C4B80003D5BE /* YYZSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
+		CEBCC88022E34E4600038041 /* YYZSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
+		CEBCC88122E34E4600038041 /* YYZSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYZSearchView.h; sourceTree = "<group>"; };
 		CEE12DAA22E0AC22008FC702 /* YYZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE12DAD22E0AC22008FC702 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEE12DAE22E0AC22008FC702 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 				CEE12DD622E0B0FF008FC702 /* YYZAssertNotEmpty.h */,
 				CEE12DD322E0B019008FC702 /* YYZColorConstructor.h */,
 				CEE12DD422E0B019008FC702 /* YYZColorConstructor.m */,
-				CE2994D922E1C4B70003D5BE /* YYZSearchView.h */,
-				CE2994DA22E1C4B80003D5BE /* YYZSearchView.m */,
+				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
+				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */,
-				CE2994DB22E1C4B80003D5BE /* YYZSearchView.m in Sources */,
+				CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */,
 				CEE12DD522E0B019008FC702 /* YYZColorConstructor.m in Sources */,
 				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
 				CEE12DAF22E0AC22008FC702 /* AppDelegate.m in Sources */,
