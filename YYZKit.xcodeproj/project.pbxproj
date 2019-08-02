@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE62563F22F440B100F1C494 /* YYZPhotoManager.m */; };
 		CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBCC88022E34E4600038041 /* YYZSearchView.m */; };
 		CEE12DAF22E0AC22008FC702 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DAE22E0AC22008FC702 /* AppDelegate.m */; };
 		CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DB122E0AC22008FC702 /* ViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE62563E22F440B100F1C494 /* YYZPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZPhotoManager.h; sourceTree = "<group>"; };
+		CE62563F22F440B100F1C494 /* YYZPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZPhotoManager.m; sourceTree = "<group>"; };
 		CEBCC88022E34E4600038041 /* YYZSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
 		CEBCC88122E34E4600038041 /* YYZSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYZSearchView.h; sourceTree = "<group>"; };
 		CEE12DAA22E0AC22008FC702 /* YYZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +98,8 @@
 				CEE12DAE22E0AC22008FC702 /* AppDelegate.m */,
 				CEE12DB022E0AC22008FC702 /* ViewController.h */,
 				CEE12DB122E0AC22008FC702 /* ViewController.m */,
+				CE62563E22F440B100F1C494 /* YYZPhotoManager.h */,
+				CE62563F22F440B100F1C494 /* YYZPhotoManager.m */,
 				CEE12DB322E0AC22008FC702 /* Main.storyboard */,
 				CEE12DB622E0AC24008FC702 /* Assets.xcassets */,
 				CEE12DB822E0AC24008FC702 /* LaunchScreen.storyboard */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */,
+				CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */,
 				CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */,
 				CEE12DD522E0B019008FC702 /* YYZColorConstructor.m in Sources */,
 				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
