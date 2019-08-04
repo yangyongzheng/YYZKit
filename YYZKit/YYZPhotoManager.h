@@ -1,20 +1,26 @@
-//
-//  YYZPhotoManager.h
-//  YYZKit
-//
-//  Created by yangyongzheng on 2019/8/2.
-//  Copyright © 2019 yoger. All rights reserved.
-//
 
 #import <Photos/Photos.h>
+#import "YYZKitDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+YYZKIT_EXTERN const NSInteger YYZPhotoAccessRestrictedErrorCode;
 
 @interface YYZPhotoManager : NSObject
 
 + (instancetype)defaultManager;
 
-- (void)requestSavePhotoToAlbum:(NSArray<UIImage *> *)images;
+- (void)requestSaveImages:(NSArray<UIImage *> *)images
+             successBlock:(void(^)(void))successBlock
+             failureBlock:(void(^)(NSError *error))failureBlock;
+
+- (void)requestSaveImageAtFileURL:(NSURL *)fileURL
+                     successBlock:(void(^)(void))successBlock
+                     failureBlock:(void(^)(NSError *error))failureBlock;
+
+- (void)requestSaveVideoAtFileURL:(NSURL *)fileURL
+                     successBlock:(void(^)(void))successBlock
+                     failureBlock:(void(^)(NSError *error))failureBlock;
 
 @end
 
