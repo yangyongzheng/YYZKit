@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE545B8F231273020063BAF1 /* YYZAppMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE545B8E231273020063BAF1 /* YYZAppMonitor.m */; };
+		CE545B9223127ED40063BAF1 /* YYZTimerHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE545B9123127ED40063BAF1 /* YYZTimerHolder.m */; };
+		CE545B9523127F060063BAF1 /* YYZKeyboardMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE545B9423127F060063BAF1 /* YYZKeyboardMonitor.m */; };
+		CE545B9823129DFE0063BAF1 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE545B9723129DFE0063BAF1 /* TestViewController.m */; };
 		CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE62563F22F440B100F1C494 /* YYZPhotoManager.m */; };
 		CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBCC88022E34E4600038041 /* YYZSearchView.m */; };
 		CEE12DAF22E0AC22008FC702 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DAE22E0AC22008FC702 /* AppDelegate.m */; };
@@ -30,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE545B8D231273020063BAF1 /* YYZAppMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZAppMonitor.h; sourceTree = "<group>"; };
+		CE545B8E231273020063BAF1 /* YYZAppMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZAppMonitor.m; sourceTree = "<group>"; };
+		CE545B9023127ED40063BAF1 /* YYZTimerHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZTimerHolder.h; sourceTree = "<group>"; };
+		CE545B9123127ED40063BAF1 /* YYZTimerHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZTimerHolder.m; sourceTree = "<group>"; };
+		CE545B9323127F060063BAF1 /* YYZKeyboardMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKeyboardMonitor.h; sourceTree = "<group>"; };
+		CE545B9423127F060063BAF1 /* YYZKeyboardMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZKeyboardMonitor.m; sourceTree = "<group>"; };
+		CE545B9623129DFE0063BAF1 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		CE545B9723129DFE0063BAF1 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CE62563E22F440B100F1C494 /* YYZPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZPhotoManager.h; sourceTree = "<group>"; };
 		CE62563F22F440B100F1C494 /* YYZPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZPhotoManager.m; sourceTree = "<group>"; };
 		CEBCC88022E34E4600038041 /* YYZSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
@@ -72,6 +84,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE545B8B231271B20063BAF1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
+				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE545B8C231271E20063BAF1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				CEE12DD822E0B256008FC702 /* YYZKitDefines.h */,
+				CEE12DD622E0B0FF008FC702 /* YYZAssertNotEmpty.h */,
+				CEE12DD322E0B019008FC702 /* YYZColorConstructor.h */,
+				CEE12DD422E0B019008FC702 /* YYZColorConstructor.m */,
+				CE62563E22F440B100F1C494 /* YYZPhotoManager.h */,
+				CE62563F22F440B100F1C494 /* YYZPhotoManager.m */,
+				CE545B8D231273020063BAF1 /* YYZAppMonitor.h */,
+				CE545B8E231273020063BAF1 /* YYZAppMonitor.m */,
+				CE545B9323127F060063BAF1 /* YYZKeyboardMonitor.h */,
+				CE545B9423127F060063BAF1 /* YYZKeyboardMonitor.m */,
+				CE545B9023127ED40063BAF1 /* YYZTimerHolder.h */,
+				CE545B9123127ED40063BAF1 /* YYZTimerHolder.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		CEE12DA122E0AC22008FC702 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +138,8 @@
 				CEE12DAE22E0AC22008FC702 /* AppDelegate.m */,
 				CEE12DB022E0AC22008FC702 /* ViewController.h */,
 				CEE12DB122E0AC22008FC702 /* ViewController.m */,
+				CE545B9623129DFE0063BAF1 /* TestViewController.h */,
+				CE545B9723129DFE0063BAF1 /* TestViewController.m */,
 				CEE12DB322E0AC22008FC702 /* Main.storyboard */,
 				CEE12DB622E0AC24008FC702 /* Assets.xcassets */,
 				CEE12DB822E0AC24008FC702 /* LaunchScreen.storyboard */,
@@ -120,14 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE12DD222E0AF6E008FC702 /* YYZKitHeader.h */,
-				CEE12DD822E0B256008FC702 /* YYZKitDefines.h */,
-				CEE12DD622E0B0FF008FC702 /* YYZAssertNotEmpty.h */,
-				CEE12DD322E0B019008FC702 /* YYZColorConstructor.h */,
-				CEE12DD422E0B019008FC702 /* YYZColorConstructor.m */,
-				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
-				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
-				CE62563E22F440B100F1C494 /* YYZPhotoManager.h */,
-				CE62563F22F440B100F1C494 /* YYZPhotoManager.m */,
+				CE545B8C231271E20063BAF1 /* Foundation */,
+				CE545B8B231271B20063BAF1 /* UI */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,10 +270,14 @@
 			files = (
 				CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */,
 				CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */,
+				CE545B9523127F060063BAF1 /* YYZKeyboardMonitor.m in Sources */,
 				CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */,
+				CE545B9823129DFE0063BAF1 /* TestViewController.m in Sources */,
 				CEE12DD522E0B019008FC702 /* YYZColorConstructor.m in Sources */,
 				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
 				CEE12DAF22E0AC22008FC702 /* AppDelegate.m in Sources */,
+				CE545B9223127ED40063BAF1 /* YYZTimerHolder.m in Sources */,
+				CE545B8F231273020063BAF1 /* YYZAppMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

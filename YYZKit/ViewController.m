@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
+
 #import "YYZKitHeader.h"
 #import "YYZPhotoManager.h"
 
@@ -41,6 +43,8 @@
             NSLog(@"下载图片失败");
         }
     }] resume];
+    
+    [self.navigationController pushViewController:TestViewController.testViewController animated:YES];
 }
 
 @end
