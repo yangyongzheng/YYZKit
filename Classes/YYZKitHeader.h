@@ -8,6 +8,8 @@
 #import "YYZAppMonitor.h"
 #import "YYZTimerHolder.h"
 
+#import "UIDevice+YYZAdditions.h"
+
 #import "UIView+YYZNibLoading.h"
 #import "UIViewController+YYZNibLoading.h"
 

@@ -10,7 +10,6 @@
 #import "TestViewController.h"
 
 #import "YYZKitHeader.h"
-#import "YYZPhotoManager.h"
 
 @interface ViewController ()
 @end
@@ -21,6 +20,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Home Page";
+    NSLog(@"%f", UIDevice.currentDevice.yyz_safeAreaBottomInset);
+    NSLog(@"%lld", UIDevice.currentDevice.yyz_compileTimestamp);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

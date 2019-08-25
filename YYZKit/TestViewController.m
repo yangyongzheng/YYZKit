@@ -7,7 +7,7 @@
 //
 
 #import "TestViewController.h"
-#import "YYZTimerHolder.h"
+#import "YYZKitHeader.h"
 
 @interface TestViewController ()
 {
@@ -28,6 +28,7 @@
     
     self.navigationItem.title = @"测试";
     self.view.backgroundColor = UIColor.yellowColor;
+    NSLog(@"%f", UIDevice.currentDevice.yyz_safeAreaBottomInset);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
