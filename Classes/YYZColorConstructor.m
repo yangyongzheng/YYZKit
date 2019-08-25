@@ -37,10 +37,14 @@ static NSString * YYZPrivateFilterHexString(NSString *hexString) {
 
 #pragma mark - Public
 UIColor * YYZColorWithRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha) {
-    return [UIColor colorWithRed:red/255.0
-                           green:green/255.0
-                            blue:blue/255.0
-                           alpha:alpha];
+    CGFloat r = MAX(0, MIN(red, 255));
+    CGFloat g = MAX(0, MIN(green, 255));
+    CGFloat b = MAX(0, MIN(blue, 255));
+    CGFloat a = MAX(0, MIN(blue, 1));
+    return [UIColor colorWithRed:r/255.0
+                           green:g/255.0
+                            blue:b/255.0
+                           alpha:a];
 }
 
 UIColor * YYZColorWithRGB(CGFloat red, CGFloat green, CGFloat blue) {

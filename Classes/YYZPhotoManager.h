@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-YYZKIT_EXTERN const NSInteger YYZPhotoAccessRestrictedErrorCode;
+YYZKIT_EXTERN const NSInteger YYZPhotoAccessRestrictedErrorCode; // 照片访问权限受限错误Code
 
 @interface YYZPhotoManager : NSObject
 

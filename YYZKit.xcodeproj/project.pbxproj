@@ -98,8 +98,6 @@
 				CEE12DAE22E0AC22008FC702 /* AppDelegate.m */,
 				CEE12DB022E0AC22008FC702 /* ViewController.h */,
 				CEE12DB122E0AC22008FC702 /* ViewController.m */,
-				CE62563E22F440B100F1C494 /* YYZPhotoManager.h */,
-				CE62563F22F440B100F1C494 /* YYZPhotoManager.m */,
 				CEE12DB322E0AC22008FC702 /* Main.storyboard */,
 				CEE12DB622E0AC24008FC702 /* Assets.xcassets */,
 				CEE12DB822E0AC24008FC702 /* LaunchScreen.storyboard */,
@@ -128,6 +126,8 @@
 				CEE12DD422E0B019008FC702 /* YYZColorConstructor.m */,
 				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
 				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
+				CE62563E22F440B100F1C494 /* YYZPhotoManager.h */,
+				CE62563F22F440B100F1C494 /* YYZPhotoManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
