@@ -44,7 +44,8 @@
         }
     }] resume];
     
-    [self.navigationController pushViewController:TestViewController.testViewController animated:YES];
+    TestViewController *vc = [TestViewController yyz_instantiateFromStoryboard];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
