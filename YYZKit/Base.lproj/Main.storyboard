@@ -39,7 +39,24 @@
                     <view key="view" contentMode="scaleToFill" id="mtP-X9-wQx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-pT-MK9">
+                                <rect key="frame" x="15" y="40" width="345" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0yw-lK-rj1"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sx3-pT-MK9" firstAttribute="top" secondItem="pgy-d7-ML7" secondAttribute="bottom" constant="20" id="TQe-7Q-30P"/>
+                            <constraint firstAttribute="trailing" secondItem="Sx3-pT-MK9" secondAttribute="trailing" constant="15" id="bMN-2x-qhh"/>
+                            <constraint firstItem="Sx3-pT-MK9" firstAttribute="leading" secondItem="mtP-X9-wQx" secondAttribute="leading" constant="15" id="lrG-Me-V3G"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmb-xX-6W3" userLabel="First Responder" sceneMemberID="firstResponder"/>

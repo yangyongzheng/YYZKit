@@ -6,6 +6,7 @@
 #import "YYZColorConstructor.h"
 #import "YYZPhotoManager.h"
 #import "YYZAppMonitor.h"
+#import "YYZKeyboardMonitor.h"
 #import "YYZTimerHolder.h"
 
 #import "UIDevice+YYZAdditions.h"

@@ -9,7 +9,7 @@
 #import "TestViewController.h"
 #import "YYZKitHeader.h"
 
-@interface TestViewController ()
+@interface TestViewController () <YYZKeyboardMonitorDelegate>
 {
     YYZTimerHolder *_timerHolder;
 }
@@ -29,6 +29,7 @@
     self.navigationItem.title = @"测试";
     self.view.backgroundColor = UIColor.yellowColor;
     NSLog(@"%f", UIDevice.currentDevice.yyz_safeAreaBottomInset);
+    [YYZKeyboardMonitor addDelegate:self];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -41,6 +42,14 @@
                                             NSLog(@"%@-%ld", strongSelf, currentMilliseconds/1000);
                                         }];
     [_timerHolder fire];
+}
+
+- (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillShow:(YYZKeyboardInfo *)info {
+    
+}
+
+- (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillHide:(YYZKeyboardInfo *)info {
+    
 }
 
 @end

@@ -20,12 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YYZAppMonitor : NSObject
 
-/** 获取单例 */
-@property (class, nonatomic, readonly, strong) YYZAppMonitor *defaultMonitor;
-
-/** 开始监听，一般在`application:didFinishLaunchingWithOptions:`中调用初始化监听器 */
-- (void)startMonitor;
-
 /** 添加代理 */
 + (void)addDelegate:(id <YYZAppMonitorDelegate>)delegate;
 

@@ -7,6 +7,7 @@
 //
 
 #import "YYZKitAppDelegate.h"
+#import "YYZKitHeader.h"
 
 @implementation YYZKitAppDelegate
 
