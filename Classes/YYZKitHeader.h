@@ -3,12 +3,12 @@
 #define YYZKitHeader_h
 
 #import "YYZAssertNotEmpty.h"
-#import "YYZColorConstructor.h"
 #import "YYZPhotoManager.h"
 #import "YYZAppMonitor.h"
 #import "YYZKeyboardMonitor.h"
 #import "YYZTimerHolder.h"
 
+#import "UIColor+YYZAdditions.h"
 #import "UIDevice+YYZAdditions.h"
 
 #import "UIView+YYZNibLoading.h"

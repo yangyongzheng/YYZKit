@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"测试";
-    self.view.backgroundColor = UIColor.yellowColor;
+    self.view.backgroundColor = UIColor.yyz_hexString(@"#ddddddff");
     NSLog(@"%f", UIDevice.currentDevice.yyz_safeAreaBottomInset);
     [YYZKeyboardMonitor addDelegate:self];
 }
