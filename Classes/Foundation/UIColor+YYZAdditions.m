@@ -12,8 +12,10 @@
 
 + (UIColor * _Nonnull (^)(NSString * _Nonnull))yyz_hexString {
     return ^id(NSString *string) {
-        if ([self yyz_isValidHexString:string]) {
-            return [self yyz_colorWithHexString:string isBeginWithAlpha:NO];
+        NSString *filteredHexString = nil;
+        if ([self yyz_isValidHexString:string filteredPrefix:&filteredHexString]) {
+            return [self yyz_colorWithValidHexString:filteredHexString
+                                    isBeginWithAlpha:NO];
         } else {
             return [UIColor clearColor];
         }
@@ -29,8 +31,10 @@
 
 + (UIColor * _Nonnull (^)(NSString * _Nonnull))yyz_reverseHexString {
     return ^id(NSString *string) {
-        if ([self yyz_isValidHexString:string]) {
-            return [self yyz_colorWithHexString:string isBeginWithAlpha:YES];
+        NSString *filteredHexString = nil;
+        if ([self yyz_isValidHexString:string filteredPrefix:&filteredHexString]) {
+            return [self yyz_colorWithValidHexString:filteredHexString
+                                    isBeginWithAlpha:YES];
         } else {
             return [UIColor clearColor];
         }
@@ -38,10 +42,11 @@
 }
 
 + (BOOL)yyz_isValidHexString:(NSString *)hexString {
-    return [self yyz_checkAndFilterPrefixForHexString:hexString] != nil;
+    return [self yyz_isValidHexString:hexString filteredPrefix:nil];
 }
 
-+ (NSString *)yyz_checkAndFilterPrefixForHexString:(NSString *)hexString {
++ (BOOL)yyz_isValidHexString:(NSString *)hexString filteredPrefix:(NSString **)result {
+    NSString *validHexString = nil;
     if (hexString && [hexString isKindOfClass:[NSString class]] && hexString.length > 0) {
         // 1.过滤首尾两端空格字符以及换行符
         NSString *filterString = [hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -55,26 +60,28 @@
                 if ([predicate evaluateWithObject:filterString]) {
                     // 4.正则校验通过时，返回有效的R/G/B或R/G/B/A字符串
                     if ([filterString hasPrefix:@"#"]) {
-                        return [filterString substringFromIndex:1];
+                        validHexString = [filterString substringFromIndex:1];
                     } else if ([filterString hasPrefix:@"0x"] || [filterString hasPrefix:@"0X"]) {
-                        return [filterString substringFromIndex:2];
+                        validHexString = [filterString substringFromIndex:2];
                     } else {
-                        return filterString;
+                        validHexString = filterString;
                     }
                 }
             }
         }
     }
+    if (result) {
+        *result = validHexString;
+    }
     
-    return nil;
+    return validHexString && validHexString.length > 0;
 }
 
-+ (UIColor *)yyz_colorWithHexString:(NSString *)hexString isBeginWithAlpha:(BOOL)isBeginWithAlpha {
-    NSString *filteredString = [self yyz_checkAndFilterPrefixForHexString:hexString];
-    if (filteredString && filteredString.length == 6) {
-        NSString *rstring = [filteredString substringWithRange:NSMakeRange(0, 2)];
-        NSString *gstring = [filteredString substringWithRange:NSMakeRange(2, 2)];
-        NSString *bstring = [filteredString substringWithRange:NSMakeRange(4, 2)];
++ (UIColor *)yyz_colorWithValidHexString:(NSString *)hexString isBeginWithAlpha:(BOOL)isBeginWithAlpha {
+    if (hexString && [hexString isKindOfClass:[NSString class]] && hexString.length == 6) {
+        NSString *rstring = [hexString substringWithRange:NSMakeRange(0, 2)];
+        NSString *gstring = [hexString substringWithRange:NSMakeRange(2, 2)];
+        NSString *bstring = [hexString substringWithRange:NSMakeRange(4, 2)];
         int r, g, b;
         sscanf(rstring.UTF8String, "%X", &r);
         sscanf(gstring.UTF8String, "%X", &g);
@@ -83,18 +90,18 @@
                                green:(CGFloat)g/255.0
                                 blue:(CGFloat)b/255.0
                                alpha:1.0];
-    } else if (filteredString && filteredString.length == 8) {
+    } else if (hexString && [hexString isKindOfClass:[NSString class]] && hexString.length == 8) {
         NSString *rstring, *gstring, *bstring, *astring;
         if (isBeginWithAlpha) {
-            astring = [filteredString substringWithRange:NSMakeRange(0, 2)];
-            rstring = [filteredString substringWithRange:NSMakeRange(2, 2)];
-            gstring = [filteredString substringWithRange:NSMakeRange(4, 2)];
-            bstring = [filteredString substringWithRange:NSMakeRange(6, 2)];
+            astring = [hexString substringWithRange:NSMakeRange(0, 2)];
+            rstring = [hexString substringWithRange:NSMakeRange(2, 2)];
+            gstring = [hexString substringWithRange:NSMakeRange(4, 2)];
+            bstring = [hexString substringWithRange:NSMakeRange(6, 2)];
         } else {
-            rstring = [filteredString substringWithRange:NSMakeRange(0, 2)];
-            gstring = [filteredString substringWithRange:NSMakeRange(2, 2)];
-            bstring = [filteredString substringWithRange:NSMakeRange(4, 2)];
-            astring = [filteredString substringWithRange:NSMakeRange(6, 2)];
+            rstring = [hexString substringWithRange:NSMakeRange(0, 2)];
+            gstring = [hexString substringWithRange:NSMakeRange(2, 2)];
+            bstring = [hexString substringWithRange:NSMakeRange(4, 2)];
+            astring = [hexString substringWithRange:NSMakeRange(6, 2)];
         }
         int r, g, b, a;
         sscanf(rstring.UTF8String, "%X", &r);
