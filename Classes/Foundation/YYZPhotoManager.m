@@ -25,10 +25,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
                 [self yyz_saveImages:images
                         successBlock:successBlock
                         failureBlock:failureBlock];
-            } else if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied) {
-                if (failureBlock) {
-                    failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
-                }
+            } else if (failureBlock) {
+                failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
             }
         });
     }];
@@ -43,10 +41,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
                 [self yyz_saveImageAtFileURL:fileURL
                                 successBlock:successBlock
                                 failureBlock:failureBlock];
-            } else if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied) {
-                if (failureBlock) {
-                    failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
-                }
+            } else  if (failureBlock) {
+                failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
             }
         });
     }];
@@ -61,10 +57,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
                 [self yyz_saveVideoAtFileURL:fileURL
                                 successBlock:successBlock
                                 failureBlock:failureBlock];
-            } else if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied) {
-                if (failureBlock) {
-                    failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
-                }
+            } else if (failureBlock) {
+                failureBlock([self yyz_errorWithCode:YYZPhotoAccessRestrictedErrorCode]);
             }
         });
     }];
@@ -82,10 +76,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
         YYZPrivateSafeSyncMainQueue(^{
             if (success) {
                 if (successBlock) {successBlock();}
-            } else {
-                if (failureBlock) {
-                    failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
-                }
+            } else if (failureBlock) {
+                failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
             }
         });
     }];
@@ -100,10 +92,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
         YYZPrivateSafeSyncMainQueue(^{
             if (success) {
                 if (successBlock) {successBlock();}
-            } else {
-                if (failureBlock) {
-                    failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
-                }
+            } else if (failureBlock) {
+                failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
             }
         });
     }];
@@ -118,10 +108,8 @@ const NSInteger YYZPhotoSaveFailedErrorCode = -101002;
         YYZPrivateSafeSyncMainQueue(^{
             if (success) {
                 if (successBlock) {successBlock();}
-            } else {
-                if (failureBlock) {
-                    failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
-                }
+            } else if (failureBlock) {
+                failureBlock(error?error:[self yyz_errorWithCode:YYZPhotoSaveFailedErrorCode]);
             }
         });
     }];

@@ -2,11 +2,8 @@
 #import "YYZAppMonitor.h"
 #import <UIKit/UIKit.h>
 
-#define YYZAppDefaultMonitor [YYZAppMonitor defaultMonitor]
-
 @interface YYZAppMonitor ()
 @property (nonatomic, strong) NSHashTable *delegateContainer;
-@property (nonatomic, getter=isMonitoring) BOOL monitoring;
 @end
 
 @implementation YYZAppMonitor
@@ -23,24 +20,18 @@
     return monitor;
 }
 
-- (void)startMonitor {
-    if (!self.isMonitoring) {
-        self.monitoring = YES;
-    }
-}
-
 + (void)addDelegate:(id<YYZAppMonitorDelegate>)delegate {
     if (delegate) {
-        @synchronized (YYZAppDefaultMonitor.delegateContainer) {
-            [YYZAppDefaultMonitor.delegateContainer addObject:delegate];
+        @synchronized (YYZAppMonitor.defaultMonitor.delegateContainer) {
+            [YYZAppMonitor.defaultMonitor.delegateContainer addObject:delegate];
         }
     }
 }
 
 + (void)removeDelegate:(id<YYZAppMonitorDelegate>)delegate {
     if (delegate) {
-        @synchronized (YYZAppDefaultMonitor.delegateContainer) {
-            [YYZAppDefaultMonitor.delegateContainer removeObject:delegate];
+        @synchronized (YYZAppMonitor.defaultMonitor.delegateContainer) {
+            [YYZAppMonitor.defaultMonitor.delegateContainer removeObject:delegate];
         }
     }
 }
@@ -49,11 +40,11 @@
 + (void)load {
     [super load];
     
-    [YYZAppDefaultMonitor startMonitor];
+    [YYZAppMonitor defaultMonitor];
 }
 
 - (void)dealloc {
-    [self stopMonitor];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)initDefaultConfig {
@@ -88,85 +79,66 @@
                                              object:nil];
 }
 
-- (void)stopMonitor {
-    self.monitoring = NO;
-    [NSNotificationCenter.defaultCenter removeObserver:self];
-}
-
 #pragma mark - notifications
 - (void)applicationDidFinishLaunchingNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationDidFinishLaunching:)]) {
-                [delegate applicationDidFinishLaunching:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationDidFinishLaunching:)]) {
+            [delegate applicationDidFinishLaunching:self];
         }
     }
 }
 
 - (void)applicationWillTerminateNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationWillTerminate:)]) {
-                [delegate applicationWillTerminate:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationWillTerminate:)]) {
+            [delegate applicationWillTerminate:self];
         }
     }
 }
 
 - (void)applicationWillEnterForegroundNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationWillEnterForeground:)]) {
-                [delegate applicationWillEnterForeground:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationWillEnterForeground:)]) {
+            [delegate applicationWillEnterForeground:self];
         }
     }
 }
 
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationDidEnterBackground:)]) {
-                [delegate applicationDidEnterBackground:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationDidEnterBackground:)]) {
+            [delegate applicationDidEnterBackground:self];
         }
     }
 }
 
 - (void)applicationDidBecomeActiveNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationDidBecomeActive:)]) {
-                [delegate applicationDidBecomeActive:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationDidBecomeActive:)]) {
+            [delegate applicationDidBecomeActive:self];
         }
     }
 }
 
 - (void)applicationWillResignActiveNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationWillResignActive:)]) {
-                [delegate applicationWillResignActive:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationWillResignActive:)]) {
+            [delegate applicationWillResignActive:self];
         }
     }
 }
 
 - (void)applicationDidReceiveMemoryWarningNotification:(NSNotification *)notification {
-    if (self.isMonitoring) {
-        NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
-        for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-            if (delegate && [delegate respondsToSelector:@selector(applicationDidReceiveMemoryWarning:)]) {
-                [delegate applicationDidReceiveMemoryWarning:self];
-            }
+    NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
+    for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
+        if (delegate && [delegate respondsToSelector:@selector(applicationDidReceiveMemoryWarning:)]) {
+            [delegate applicationDidReceiveMemoryWarning:self];
         }
     }
 }

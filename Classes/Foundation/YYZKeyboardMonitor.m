@@ -15,12 +15,8 @@
 
 
 
-
-#define YYZKeyboardDefaultMonitor [YYZKeyboardMonitor defaultMonitor]
-
 @interface YYZKeyboardMonitor ()
 @property (nonatomic, strong) NSHashTable *delegateContainer;
-@property (nonatomic, getter=isMonitoring) BOOL monitoring;
 @end
 
 @implementation YYZKeyboardMonitor
@@ -35,24 +31,18 @@
     return monitor;
 }
 
-- (void)startMonitor {
-    if (!self.isMonitoring) {
-        self.monitoring = YES;
-    }
-}
-
 + (void)addDelegate:(id<YYZKeyboardMonitorDelegate>)delegate {
     if (delegate) {
-        @synchronized (YYZKeyboardDefaultMonitor.delegateContainer) {
-            [YYZKeyboardDefaultMonitor.delegateContainer addObject:delegate];
+        @synchronized (YYZKeyboardMonitor.defaultMonitor.delegateContainer) {
+            [YYZKeyboardMonitor.defaultMonitor.delegateContainer addObject:delegate];
         }
     }
 }
 
 + (void)removeDelegate:(id<YYZKeyboardMonitorDelegate>)delegate {
     if (delegate) {
-        @synchronized (YYZKeyboardDefaultMonitor.delegateContainer) {
-            [YYZKeyboardDefaultMonitor.delegateContainer removeObject:delegate];
+        @synchronized (YYZKeyboardMonitor.defaultMonitor.delegateContainer) {
+            [YYZKeyboardMonitor.defaultMonitor.delegateContainer removeObject:delegate];
         }
     }
 }
@@ -61,7 +51,7 @@
 + (void)load {
     [super load];
     
-    [YYZKeyboardDefaultMonitor startMonitor];
+    [YYZKeyboardMonitor defaultMonitor];
 }
 
 - (void)dealloc {
@@ -97,73 +87,61 @@
 }
 
 - (void)keyboardWillShowNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillShow:)]) {
-                [delegate keyboardMonitor:self
-                         keyboardWillShow:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillShow:)]) {
+            [delegate keyboardMonitor:self
+                     keyboardWillShow:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }
 
 - (void)keyboardDidShowNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidShow:)]) {
-                [delegate keyboardMonitor:self
-                          keyboardDidShow:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidShow:)]) {
+            [delegate keyboardMonitor:self
+                      keyboardDidShow:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }
 
 - (void)keyboardWillHideNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillHide:)]) {
-                [delegate keyboardMonitor:self
-                         keyboardWillHide:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillHide:)]) {
+            [delegate keyboardMonitor:self
+                     keyboardWillHide:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }
 
 - (void)keyboardDidHideNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidHide:)]) {
-                [delegate keyboardMonitor:self
-                          keyboardDidHide:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidHide:)]) {
+            [delegate keyboardMonitor:self
+                      keyboardDidHide:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }
 
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillChangeFrame:)]) {
-                [delegate keyboardMonitor:self
-                  keyboardWillChangeFrame:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardWillChangeFrame:)]) {
+            [delegate keyboardMonitor:self
+              keyboardWillChangeFrame:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }
 
 - (void)keyboardDidChangeFrameNotification:(NSNotification *)noti {
-    if (self.isMonitoring) {
-        NSArray *delegateArray = self.delegateContainer.allObjects;
-        for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
-            if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidChangeFrame:)]) {
-                [delegate keyboardMonitor:self
-                   keyboardDidChangeFrame:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
-            }
+    NSArray *delegateArray = self.delegateContainer.allObjects;
+    for (id <YYZKeyboardMonitorDelegate> delegate in delegateArray) {
+        if ([delegate respondsToSelector:@selector(keyboardMonitor:keyboardDidChangeFrame:)]) {
+            [delegate keyboardMonitor:self
+               keyboardDidChangeFrame:[YYZKeyboardInfo keyboardInfoWithNotification:noti]];
         }
     }
 }

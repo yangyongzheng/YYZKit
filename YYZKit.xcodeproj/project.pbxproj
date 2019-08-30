@@ -283,13 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
 				CE545B9E2312A4100063BAF1 /* UIView+YYZNibLoading.m in Sources */,
 				CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */,
 				CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */,
 				CE545B9523127F060063BAF1 /* YYZKeyboardMonitor.m in Sources */,
 				CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */,
 				CE545B9823129DFE0063BAF1 /* TestViewController.m in Sources */,
-				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
 				CEF628522316B4D900C87CD6 /* UIColor+YYZAdditions.m in Sources */,
 				CE545BAF2312C7D70063BAF1 /* YYZKitAppDelegate.m in Sources */,
 				CE545B9223127ED40063BAF1 /* YYZTimerHolder.m in Sources */,
