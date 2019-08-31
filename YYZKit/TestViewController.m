@@ -28,6 +28,12 @@
     
     self.navigationItem.title = @"测试";
     [YYZKeyboardMonitor addDelegate:self];
+    [self.view yyz_makeGradient:^(YYZGradientMaker * _Nonnull maker) {
+        maker.colors = @[UIColor.yellowColor, UIColor.redColor, UIColor.redColor];
+        maker.locations = @[@0.5, @0.75, @1.0];
+        maker.startPoint = CGPointMake(0.5, 0.0);
+        maker.endPoint = CGPointMake(0.5, 1.0);
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
