@@ -12,6 +12,8 @@
 
 #import "UIColor+YYZAdditions.h"
 #import "UIDevice+YYZAdditions.h"
+#import "NSString+YYZAdditions.h"
+#import "NSData+YYZGZIP.h"
 
 #import "YYZGradientView.h"
 #import "UIView+YYZNibLoading.h"

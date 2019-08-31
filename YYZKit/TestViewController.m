@@ -34,6 +34,7 @@
         maker.startPoint = CGPointMake(0.5, 0.0);
         maker.endPoint = CGPointMake(0.5, 1.0);
     }];
+    NSLog(@"%@", [self.navigationItem.title yyz_MD5Encryption]);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
