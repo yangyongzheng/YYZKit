@@ -22,6 +22,7 @@
 		CE545BAF2312C7D70063BAF1 /* YYZKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE545BAE2312C7D70063BAF1 /* YYZKitAppDelegate.m */; };
 		CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE62563F22F440B100F1C494 /* YYZPhotoManager.m */; };
 		CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBCC88022E34E4600038041 /* YYZSearchView.m */; };
+		CEC84C7E231A907E007E76BB /* YYZAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC84C7D231A907E007E76BB /* YYZAlertManager.m */; };
 		CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DB122E0AC22008FC702 /* ViewController.m */; };
 		CEE12DB522E0AC22008FC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE12DB322E0AC22008FC702 /* Main.storyboard */; };
 		CEE12DB722E0AC24008FC702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE12DB622E0AC24008FC702 /* Assets.xcassets */; };
@@ -72,6 +73,8 @@
 		CE62563F22F440B100F1C494 /* YYZPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZPhotoManager.m; sourceTree = "<group>"; };
 		CEBCC88022E34E4600038041 /* YYZSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
 		CEBCC88122E34E4600038041 /* YYZSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYZSearchView.h; sourceTree = "<group>"; };
+		CEC84C7C231A907E007E76BB /* YYZAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYZAlertManager.h; sourceTree = "<group>"; };
+		CEC84C7D231A907E007E76BB /* YYZAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZAlertManager.m; sourceTree = "<group>"; };
 		CEE12DAA22E0AC22008FC702 /* YYZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE12DB022E0AC22008FC702 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CEE12DB122E0AC22008FC702 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				CE45E032231A624D00DCB5A2 /* YYZGradientView.m */,
 				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
 				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
+				CEC84C7C231A907E007E76BB /* YYZAlertManager.h */,
+				CEC84C7D231A907E007E76BB /* YYZAlertManager.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				CE62564022F440B100F1C494 /* YYZPhotoManager.m in Sources */,
 				CE545B9523127F060063BAF1 /* YYZKeyboardMonitor.m in Sources */,
 				CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */,
+				CEC84C7E231A907E007E76BB /* YYZAlertManager.m in Sources */,
 				CE45E02A231A14FF00DCB5A2 /* YYZDateManager.m in Sources */,
 				CE545B9823129DFE0063BAF1 /* TestViewController.m in Sources */,
 				CEF628522316B4D900C87CD6 /* UIColor+YYZAdditions.m in Sources */,

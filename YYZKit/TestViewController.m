@@ -8,6 +8,7 @@
 
 #import "TestViewController.h"
 #import "YYZKitHeader.h"
+#import "YYZAlertManager.h"
 
 @interface TestViewController () <YYZKeyboardMonitorDelegate>
 {
@@ -47,6 +48,20 @@
                                             NSLog(@"%@-%ld", strongSelf, currentMilliseconds/1000);
                                         }];
     [_timerHolder fire];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 270, 380)];
+    view.backgroundColor = UIColor.redColor;
+    [YYZAlertManager showWithCustomView:view
+                          animationType:YYZAlertAnimationTypeFade
+                             completion:^{
+                                 
+                             }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [YYZAlertManager hideWithAnimationType:YYZAlertAnimationTypeNone
+                                    completion:^{
+                                        
+                                    }];
+    });
 }
 
 - (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillShow:(YYZKeyboardInfo *)info {

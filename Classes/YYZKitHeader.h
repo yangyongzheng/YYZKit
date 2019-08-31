@@ -18,5 +18,6 @@
 #import "YYZGradientView.h"
 #import "UIView+YYZNibLoading.h"
 #import "UIViewController+YYZNibLoading.h"
+#import "YYZAlertManager.h"
 
 #endif /* YYZKitHeader_h */
