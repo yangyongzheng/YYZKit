@@ -6,51 +6,6 @@
 @property (nonatomic, strong) UIColor *searchIconColor;
 @end
 
-@implementation YYZPrivateSearchIconView
-
-+ (Class)layerClass {
-    return [CAShapeLayer class];
-}
-
-- (void)layoutSublayersOfLayer:(CALayer *)layer {
-    [self yyz_refreshIcon];
-}
-
-- (void)yyz_refreshIcon {
-    static const CGFloat lineWidth = 2;
-    CAShapeLayer *iconLayer = (CAShapeLayer *)self.layer;
-    iconLayer.strokeColor = self.searchIconColor.CGColor;
-    iconLayer.fillColor = nil;
-    iconLayer.lineWidth = lineWidth;
-    iconLayer.lineCap = kCALineCapRound;
-    iconLayer.lineJoin = kCALineJoinRound;
-    
-    CGFloat width = CGRectGetWidth(self.bounds) - self.contentInsets.left - self.contentInsets.right;
-    CGFloat height = CGRectGetHeight(self.bounds) - self.contentInsets.top - self.contentInsets.bottom;
-    CGFloat validValue = MIN(width, height);
-    CGFloat validDiameter = validValue - lineWidth;
-    CGPoint arcCenter = CGPointMake(validValue/2.0+self.contentInsets.left, validValue/2.0+self.contentInsets.top);
-    UIBezierPath *iconPath = [UIBezierPath bezierPathWithArcCenter:arcCenter
-                                                            radius:validDiameter/2.0
-                                                        startAngle:M_PI * 0.25
-                                                          endAngle:M_PI * 2.25
-                                                         clockwise:YES];
-    CGFloat minMargin = MIN(self.contentInsets.right, self.contentInsets.bottom);
-    [iconPath addLineToPoint:CGPointMake(self.contentInsets.left+validValue+minMargin-lineWidth/2.0,
-                                         self.contentInsets.top+validValue+minMargin-lineWidth/2.0)];
-    iconLayer.path = iconPath.CGPath;
-}
-
-- (void)setSearchIconColor:(UIColor *)searchIconColor {
-    _searchIconColor = searchIconColor;
-    
-    ((CAShapeLayer *)self.layer).strokeColor = searchIconColor.CGColor;
-}
-
-@end
-
-
-
 
 
 @interface YYZSearchView () <UITextFieldDelegate>
@@ -155,8 +110,8 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldShouldBeginEditing:)]) {
-        return [self.delegate searchView:self textFieldShouldBeginEditing:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewShouldBeginEditing:)]) {
+        return [self.delegate searchViewShouldBeginEditing:self];
     } else {
         return YES;
     }
@@ -170,15 +125,15 @@
         [self layoutIfNeeded];
     }];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldDidBeginEditing:)]) {
-        [self.delegate searchView:self textFieldDidBeginEditing:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewDidBeginEditing:)]) {
+        [self.delegate searchViewDidBeginEditing:self];
     }
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     BOOL shouldEndEditing = YES;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldShouldEndEditing:)]) {
-        shouldEndEditing = [self.delegate searchView:self textFieldShouldEndEditing:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewShouldEndEditing:)]) {
+        shouldEndEditing = [self.delegate searchViewShouldEndEditing:self];
     }
     
     if (shouldEndEditing) {
@@ -195,30 +150,30 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldDidEndEditing:)]) {
-        [self.delegate searchView:self textFieldDidEndEditing:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewDidEndEditing:)]) {
+        [self.delegate searchViewDidEndEditing:self];
     }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textField:shouldChangeCharactersInRange:replacementString:)]) {
-        return [self.delegate searchView:self textField:textField shouldChangeCharactersInRange:range replacementString:string];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:shouldChangeCharactersInRange:replacementString:)]) {
+        return [self.delegate searchView:self shouldChangeCharactersInRange:range replacementString:string];
     }  else {
         return YES;
     }
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldShouldClear:)]) {
-        return [self.delegate searchView:self textFieldShouldClear:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewShouldClear:)]) {
+        return [self.delegate searchViewShouldClear:self];
     } else {
         return YES;
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldShouldReturn:)]) {
-        return [self.delegate searchView:self textFieldShouldReturn:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewShouldReturn:)]) {
+        return [self.delegate searchViewShouldReturn:self];
     } else {
         return YES;
     }
@@ -238,8 +193,8 @@
 }
 
 - (void)yyz_textFieldTextDidChange:(UITextField *)textField {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(searchView:textFieldTextDidChange:)]) {
-        [self.delegate searchView:self textFieldTextDidChange:textField];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchViewTextDidChange:)]) {
+        [self.delegate searchViewTextDidChange:self];
     }
 }
 
@@ -383,6 +338,52 @@
                                                                multiplier:1.0
                                                                  constant:0];
     [NSLayoutConstraint activateConstraints:@[top, leading, bottom, trailing]];
+}
+
+@end
+
+
+
+@implementation YYZPrivateSearchIconView
+
++ (Class)layerClass {
+    return [CAShapeLayer class];
+}
+
+- (void)layoutSublayersOfLayer:(CALayer *)layer {
+    [super layoutSublayersOfLayer:layer];
+    [self yyz_refreshIcon];
+}
+
+- (void)yyz_refreshIcon {
+    static const CGFloat lineWidth = 2;
+    CAShapeLayer *iconLayer = (CAShapeLayer *)self.layer;
+    iconLayer.strokeColor = self.searchIconColor.CGColor;
+    iconLayer.fillColor = nil;
+    iconLayer.lineWidth = lineWidth;
+    iconLayer.lineCap = kCALineCapRound;
+    iconLayer.lineJoin = kCALineJoinRound;
+    
+    CGFloat width = CGRectGetWidth(self.bounds) - self.contentInsets.left - self.contentInsets.right;
+    CGFloat height = CGRectGetHeight(self.bounds) - self.contentInsets.top - self.contentInsets.bottom;
+    CGFloat validValue = MIN(width, height);
+    CGFloat validDiameter = validValue - lineWidth;
+    CGPoint arcCenter = CGPointMake(validValue/2.0+self.contentInsets.left, validValue/2.0+self.contentInsets.top);
+    UIBezierPath *iconPath = [UIBezierPath bezierPathWithArcCenter:arcCenter
+                                                            radius:validDiameter/2.0
+                                                        startAngle:M_PI * 0.25
+                                                          endAngle:M_PI * 2.25
+                                                         clockwise:YES];
+    CGFloat minMargin = MIN(self.contentInsets.right, self.contentInsets.bottom);
+    [iconPath addLineToPoint:CGPointMake(self.contentInsets.left+validValue+minMargin-lineWidth/2.0,
+                                         self.contentInsets.top+validValue+minMargin-lineWidth/2.0)];
+    iconLayer.path = iconPath.CGPath;
+}
+
+- (void)setSearchIconColor:(UIColor *)searchIconColor {
+    _searchIconColor = searchIconColor;
+    
+    ((CAShapeLayer *)self.layer).strokeColor = searchIconColor.CGColor;
 }
 
 @end

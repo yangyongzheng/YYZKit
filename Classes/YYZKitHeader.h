@@ -19,5 +19,6 @@
 #import "UIView+YYZNibLoading.h"
 #import "UIViewController+YYZNibLoading.h"
 #import "YYZAlertManager.h"
+#import "YYZSearchView.h"
 
 #endif /* YYZKitHeader_h */

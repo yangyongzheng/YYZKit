@@ -22,6 +22,8 @@
     self.navigationItem.title = @"Home Page";
     NSLog(@"%f", UIDevice.currentDevice.yyz_safeAreaBottomInset);
     NSLog(@"%lld", UIDevice.currentDevice.yyz_compileTimestamp);
+    YYZSearchView *searchView = [[YYZSearchView alloc] initWithFrame:CGRectMake(15, 100, UIDevice.currentDevice.yyz_screenWidth-30, 30)];
+    [self.view addSubview:searchView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
