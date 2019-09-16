@@ -3,27 +3,27 @@
 
 @implementation UIDevice (YYZAdditions)
 
-- (CGFloat)yyz_statusBarHeight {
-    return UIApplication.sharedApplication.statusBarFrame.size.height;
-}
-
-- (CGFloat)yyz_screenWidth {
++ (CGFloat)yyz_screenWidth {
     return UIScreen.mainScreen.bounds.size.width;
 }
 
-- (CGFloat)yyz_screenHeight {
++ (CGFloat)yyz_screenHeight {
     return UIScreen.mainScreen.bounds.size.height;
 }
 
-- (CGFloat)yyz_navigationBarHeight {
++ (CGFloat)yyz_statusBarHeight {
+    return UIApplication.sharedApplication.statusBarFrame.size.height;
+}
+
++ (CGFloat)yyz_navigationBarHeight {
     return 44;
 }
 
-- (CGFloat)yyz_tabBarHeight {
++ (CGFloat)yyz_tabBarHeight {
     return 49;
 }
 
-- (CGFloat)yyz_safeAreaBottomInset {
++ (CGFloat)yyz_safeAreaBottomInset {
     static CGFloat bottomInset = 0;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -39,7 +39,7 @@
     return bottomInset;
 }
 
-- (int64_t)yyz_compileTimestamp {
++ (int64_t)yyz_compileTimestamp {
     static int64_t timestamp = 0;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

@@ -11,14 +11,16 @@ typedef NS_ENUM(NSUInteger, YYZAlertAnimationType) {
 
 @interface YYZAlertManager : NSObject
 
-+ (BOOL)isAlertingView;
+/** 是否正显示提示框 */
+@property (class, nonatomic, readonly) BOOL isAlerting;
 
-+ (BOOL)showWithCustomView:(UIView *)customView
-             animationType:(YYZAlertAnimationType)animationType
-                completion:(void(^)(void))completion;
+
++ (BOOL)showCustomView:(UIView *)customView
+         animationType:(YYZAlertAnimationType)animationType
+            completion:(void (^)(void))completion;
 
 + (void)hideWithAnimationType:(YYZAlertAnimationType)animationType
-                   completion:(void(^)(void))completion;
+                   completion:(void (^)(void))completion;
 
 @end
 

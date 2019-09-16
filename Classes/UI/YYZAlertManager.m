@@ -6,19 +6,19 @@
 @property (nonatomic, readonly, strong) UIView *shadowView;
 @property (nonatomic, readonly, strong) UIView *containerView;
 
-@property (nonatomic) BOOL isAlerting;
+@property (nonatomic) BOOL isAlertingView;
 @end
 
 @implementation YYZAlertManager
 
-+ (BOOL)isAlertingView {
-    return YYZAlertManager.defaultManager.isAlerting;
++ (BOOL)isAlerting {
+    return YYZAlertManager.defaultManager.isAlertingView;
 }
 
-+ (BOOL)showWithCustomView:(UIView *)customView
-             animationType:(YYZAlertAnimationType)animationType
-                completion:(void (^)(void))completion {
-    if (!YYZAlertManager.defaultManager.isAlerting &&
++ (BOOL)showCustomView:(UIView *)customView
+         animationType:(YYZAlertAnimationType)animationType
+            completion:(void (^)(void))completion {
+    if (!YYZAlertManager.isAlerting &&
         customView && [customView isKindOfClass:[UIView class]] &&
         !CGSizeEqualToSize(customView.frame.size, CGSizeZero)) {
         // 添加自定义View
@@ -33,7 +33,8 @@
     }
 }
 
-+ (void)hideWithAnimationType:(YYZAlertAnimationType)animationType completion:(void (^)(void))completion {
++ (void)hideWithAnimationType:(YYZAlertAnimationType)animationType
+                   completion:(void (^)(void))completion {
     [YYZAlertManager.defaultManager hideWithAnimationType:animationType completion:completion];
 }
 
@@ -74,7 +75,7 @@
 
 - (void)showWithAnimationType:(YYZAlertAnimationType)animationType
                    completion:(void (^)(void))completion {
-    self.isAlerting = YES;
+    self.isAlertingView = YES;
     [self.window makeKeyAndVisible];
     switch (animationType) {
         case YYZAlertAnimationTypeFade: {
@@ -107,8 +108,9 @@
     }
 }
 
-- (void)hideWithAnimationType:(YYZAlertAnimationType)animationType completion:(void (^)(void))completion {
-    if (self.isAlerting) {
+- (void)hideWithAnimationType:(YYZAlertAnimationType)animationType
+                   completion:(void (^)(void))completion {
+    if (self.isAlertingView) {
         switch (animationType) {
             case YYZAlertAnimationTypeFade: {
                 [UIView animateWithDuration:0.25 animations:^{
@@ -117,7 +119,7 @@
                 } completion:^(BOOL finished) {
                     [self removeCustomView];
                     [self resetDefaultConfig];
-                    self.isAlerting = NO;
+                    self.isAlertingView = NO;
                     if (completion) {completion();}
                 }];
                 break;
@@ -132,7 +134,7 @@
                 } completion:^(BOOL finished) {
                     [self removeCustomView];
                     [self resetDefaultConfig];
-                    self.isAlerting = NO;
+                    self.isAlertingView = NO;
                     if (completion) {completion();}
                 }];
                 break;
@@ -141,7 +143,7 @@
             default: {
                 [self removeCustomView];
                 [self resetDefaultConfig];
-                self.isAlerting = NO;
+                self.isAlertingView = NO;
                 if (completion) {completion();}
                 break;
             }
