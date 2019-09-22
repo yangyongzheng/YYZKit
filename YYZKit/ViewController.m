@@ -24,6 +24,7 @@
     NSLog(@"%lld", UIDevice.yyz_compileTimestamp);
     YYZSearchView *searchView = [[YYZSearchView alloc] initWithFrame:CGRectMake(15, 100, UIDevice.yyz_screenWidth-30, 30)];
     [self.view addSubview:searchView];
+    [YYZAppMonitor addDelegate:self];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

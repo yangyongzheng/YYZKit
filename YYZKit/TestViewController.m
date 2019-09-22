@@ -8,7 +8,7 @@
 
 #import "TestViewController.h"
 #import "YYZKitHeader.h"
-#import "YYZAlertManager.h"
+#import "TestView.h"
 
 @interface TestViewController () <YYZKeyboardMonitorDelegate>
 {
@@ -28,6 +28,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"测试";
+    [YYZKeyboardMonitor addDelegate:self];
     [YYZKeyboardMonitor addDelegate:self];
     [self.view yyz_makeGradient:^(YYZGradientMaker * _Nonnull maker) {
         maker.colors = @[UIColor.yellowColor, UIColor.redColor, UIColor.redColor];
@@ -49,23 +50,19 @@
                                         }];
     [_timerHolder fire];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 270, 380)];
+    TestView *view = [[TestView alloc] initWithFrame:CGRectMake(0, 0, 270, 380)];
     view.backgroundColor = UIColor.redColor;
-    [YYZAlertManager showCustomView:view
-                      animationType:YYZAlertAnimationTypeSlide
-                         completion:^{
-                             
-                         }];
+    [view yyz_showWithAnimation:YYZAlertAnimationTypeFade completion:^{}];
+    [view yyz_showWithAnimation:YYZAlertAnimationTypeNone completion:^{}];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [YYZAlertManager hideWithAnimationType:YYZAlertAnimationTypeSlide
-                                    completion:^{
-                                        
-                                    }];
+        [view yyz_hideWithAnimation:YYZAlertAnimationTypeFade completion:^{
+            
+        }];
     });
 }
 
 - (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillShow:(YYZKeyboardInfo *)info {
-    
+    [YYZKeyboardMonitor removeDelegate:self];
 }
 
 - (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillHide:(YYZKeyboardInfo *)info {

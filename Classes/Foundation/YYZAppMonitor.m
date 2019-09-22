@@ -83,7 +83,7 @@
 - (void)applicationDidFinishLaunchingNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationDidFinishLaunching:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationDidFinishLaunching:)]) {
             [delegate applicationDidFinishLaunching:self];
         }
     }
@@ -92,7 +92,7 @@
 - (void)applicationWillTerminateNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationWillTerminate:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationWillTerminate:)]) {
             [delegate applicationWillTerminate:self];
         }
     }
@@ -101,7 +101,7 @@
 - (void)applicationWillEnterForegroundNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationWillEnterForeground:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationWillEnterForeground:)]) {
             [delegate applicationWillEnterForeground:self];
         }
     }
@@ -110,7 +110,7 @@
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationDidEnterBackground:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationDidEnterBackground:)]) {
             [delegate applicationDidEnterBackground:self];
         }
     }
@@ -119,7 +119,7 @@
 - (void)applicationDidBecomeActiveNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationDidBecomeActive:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationDidBecomeActive:)]) {
             [delegate applicationDidBecomeActive:self];
         }
     }
@@ -128,7 +128,7 @@
 - (void)applicationWillResignActiveNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationWillResignActive:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationWillResignActive:)]) {
             [delegate applicationWillResignActive:self];
         }
     }
@@ -137,7 +137,7 @@
 - (void)applicationDidReceiveMemoryWarningNotification:(NSNotification *)notification {
     NSArray *allDelegates = self.delegateContainer.allObjects; // fix 代理回调方法中调用`removeDelegate:`移除对象崩溃
     for (id <YYZAppMonitorDelegate> delegate in allDelegates) {
-        if (delegate && [delegate respondsToSelector:@selector(applicationDidReceiveMemoryWarning:)]) {
+        if ([self.delegateContainer containsObject:delegate] && [delegate respondsToSelector:@selector(applicationDidReceiveMemoryWarning:)]) {
             [delegate applicationDidReceiveMemoryWarning:self];
         }
     }
