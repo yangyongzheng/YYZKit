@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TestViewController.h"
+#import "InputPasswordView.h"
 
 #import "YYZKitHeader.h"
 
@@ -24,7 +25,10 @@
     NSLog(@"%lld", UIDevice.yyz_compileTimestamp);
     YYZSearchView *searchView = [[YYZSearchView alloc] initWithFrame:CGRectMake(15, 100, UIDevice.yyz_screenWidth-30, 30)];
     [self.view addSubview:searchView];
-    [YYZAppMonitor addDelegate:self];
+    
+    InputPasswordView *inputView = InputPasswordView.passwordView;
+    inputView.frame = CGRectMake(16, 200, 360, 60);
+    [self.view addSubview:inputView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
