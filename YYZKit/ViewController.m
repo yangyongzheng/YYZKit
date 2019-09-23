@@ -21,39 +21,43 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Home Page";
-    NSLog(@"%f", UIDevice.yyz_safeAreaBottomInset);
-    NSLog(@"%lld", UIDevice.yyz_compileTimestamp);
-    YYZSearchView *searchView = [[YYZSearchView alloc] initWithFrame:CGRectMake(15, 100, UIDevice.yyz_screenWidth-30, 30)];
-    [self.view addSubview:searchView];
-    
-    InputPasswordView *inputView = InputPasswordView.passwordView;
-    inputView.frame = CGRectMake(16, 200, 360, 60);
-    [self.view addSubview:inputView];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+    view.backgroundColor = UIColor.redColor;
+    [self.view addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[[NSLayoutConstraint constraintWithItem:view
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.topLayoutGuide
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                          multiplier:1.0
+                                                                            constant:0],
+                                              [NSLayoutConstraint constraintWithItem:view
+                                                                           attribute:NSLayoutAttributeLeading
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.view
+                                                                           attribute:NSLayoutAttributeLeading
+                                                                          multiplier:1.0
+                                                                            constant:0],
+                                              [NSLayoutConstraint constraintWithItem:view
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.bottomLayoutGuide
+                                                                           attribute:NSLayoutAttributeTop
+                                                                          multiplier:1.0
+                                                                            constant:0],
+                                              [NSLayoutConstraint constraintWithItem:view
+                                                                           attribute:NSLayoutAttributeTrailing
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.view
+                                                                           attribute:NSLayoutAttributeTrailing
+                                                                          multiplier:1.0
+                                                                            constant:0],
+                                              ]];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSURL *imageURL = [NSURL URLWithString:@"http://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/730e0cf3d7ca7bcb96e256f5bc096b63f724a84b.jpg"];
-    [[NSURLSession.sharedSession downloadTaskWithURL:imageURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (!error && location) {
-            NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:response.suggestedFilename];
-            NSURL *fileURL = [NSURL fileURLWithPath:filePath];
-            NSError *aError = nil;
-            [NSFileManager.defaultManager moveItemAtURL:location toURL:fileURL error:&aError];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [YYZPhotoManager.defaultManager requestSaveImageAtFileURL:fileURL
-                                                             successBlock:^{
-                                                                 NSLog(@"1");
-                                                             } failureBlock:^(NSError * _Nonnull error) {
-                                                                 NSLog(@"0");
-                                                             }];
-            });
-        } else {
-            NSLog(@"下载图片失败");
-        }
-    }] resume];
     
-    TestViewController *vc = [TestViewController yyz_instantiateFromStoryboard];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
