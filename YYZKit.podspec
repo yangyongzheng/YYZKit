@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "UIKit" do |ks|
-    ks.dependency "Classes/Foundation"
+    ks.dependency "YYZKit/Foundation"
     ks.source_files = "Classes/UIKit/**/*.{h,m}"
     ks.public_header_files = "Classes/UIKit/**/*.h"
     # ks.ios.resource_bundle = { "UEKKitNib" => "UEKKit/Controls/**/*.xib" }
