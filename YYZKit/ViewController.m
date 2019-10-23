@@ -57,7 +57,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    YYZUserDocumentDirectory();
 }
 
 @end

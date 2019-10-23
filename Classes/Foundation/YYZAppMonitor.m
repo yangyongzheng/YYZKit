@@ -13,7 +13,7 @@
     static YYZAppMonitor *monitor = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        monitor = [[[self class] alloc] init];
+        monitor = [[YYZAppMonitor alloc] init];
         [monitor initDefaultConfig];
     });
     
@@ -38,8 +38,6 @@
 
 #pragma mark - Private
 + (void)load {
-    [super load];
-    
     [YYZAppMonitor defaultMonitor];
 }
 

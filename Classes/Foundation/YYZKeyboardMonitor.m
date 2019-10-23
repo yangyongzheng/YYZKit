@@ -25,7 +25,7 @@
     static YYZKeyboardMonitor *monitor  = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        monitor = [[[self class] alloc] init];
+        monitor = [[YYZKeyboardMonitor alloc] init];
         [monitor initDefaultConfig];
     });
     return monitor;
@@ -49,8 +49,6 @@
 
 #pragma mark - Private
 + (void)load {
-    [super load];
-    
     [YYZKeyboardMonitor defaultMonitor];
 }
 

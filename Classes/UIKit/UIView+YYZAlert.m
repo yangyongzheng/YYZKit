@@ -19,7 +19,7 @@
 
 #define YYZPAlertDefaultWindow [YYZPrivateAlertWindow yyz_privateAlertWindow]
 
-static const NSTimeInterval YYZAlertAnimationDuration = 0.25;
+static const NSTimeInterval YYZAlertAnimationDuration = 0.3;
 
 @implementation UIView (YYZAlert)
 

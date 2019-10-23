@@ -5,7 +5,8 @@ static NSString * const YYZUserCustomDataDirectory = @"YYZUserCustomData";
 
 static NSString * YYZDirectoryAppendSubdirectory(NSString *directory, NSString *subdirectory) {
     NSString *fullPath = [directory stringByAppendingPathComponent:subdirectory];
-    if (![NSFileManager.defaultManager fileExistsAtPath:fullPath isDirectory:nil]) {
+    BOOL isDirectory = NO;
+    if ([NSFileManager.defaultManager fileExistsAtPath:fullPath isDirectory:&isDirectory] && isDirectory) {} else {
         [NSFileManager.defaultManager createDirectoryAtPath:fullPath
                                 withIntermediateDirectories:YES
                                                  attributes:nil
