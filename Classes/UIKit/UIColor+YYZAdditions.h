@@ -6,19 +6,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (YYZAdditions)
 
 /**
- 解析规则：6位有效16进制数按 RRGGBB 解析，8位按照 RRGGBBAA 解析，其他情况直接返回`[UIColor clearColor]`
- */
-@property (class, nonatomic, readonly) UIColor *(^ yyz_hexInt)(uint32_t);
-
-/**
  解析规则：6位有效16进制字符串按 RRGGBB 解析，8位按照 RRGGBBAA 解析，其他情况直接返回`[UIColor clearColor]`
  */
 @property (class, nonatomic, readonly) UIColor *(^ yyz_hexString)(NSString *);
-
-/**
- 解析规则：6位有效16进制数按 RRGGBB 解析，8位按照 AARRGGBB 解析，其他情况直接返回`[UIColor clearColor]`
- */
-@property (class, nonatomic, readonly) UIColor *(^ yyz_reverseHexInt)(uint32_t);
 
 /**
  解析规则：6位有效16进制字符串按 RRGGBB 解析，8位按照 AARRGGBB 解析，其他情况直接返回`[UIColor clearColor]`

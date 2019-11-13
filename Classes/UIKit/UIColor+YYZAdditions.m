@@ -3,29 +3,14 @@
 
 @implementation UIColor (YYZAdditions)
 
-+ (UIColor * _Nonnull (^)(uint32_t))yyz_hexInt {
-    return ^id(uint32_t number) {
-        NSString *string = [NSString stringWithFormat:@"%X", number];
-        return self.yyz_hexString(string);
-    };
-}
-
 + (UIColor * _Nonnull (^)(NSString * _Nonnull))yyz_hexString {
     return ^id(NSString *string) {
         NSString *filteredHexString = nil;
         if ([self yyz_isValidHexString:string filteredPrefix:&filteredHexString]) {
-            return [self yyz_colorWithValidHexString:filteredHexString
-                                    isBeginWithAlpha:NO];
+            return [self yyz_colorWithValidHexString:filteredHexString beginWithAlpha:NO];
         } else {
             return [UIColor clearColor];
         }
-    };
-}
-
-+ (UIColor * _Nonnull (^)(uint32_t))yyz_reverseHexInt {
-    return ^id(uint32_t number) {
-        NSString *string = [NSString stringWithFormat:@"%X", number];
-        return self.yyz_reverseHexString(string);
     };
 }
 
@@ -33,8 +18,7 @@
     return ^id(NSString *string) {
         NSString *filteredHexString = nil;
         if ([self yyz_isValidHexString:string filteredPrefix:&filteredHexString]) {
-            return [self yyz_colorWithValidHexString:filteredHexString
-                                    isBeginWithAlpha:YES];
+            return [self yyz_colorWithValidHexString:filteredHexString beginWithAlpha:YES];
         } else {
             return [UIColor clearColor];
         }
@@ -77,7 +61,7 @@
     return validHexString && validHexString.length > 0;
 }
 
-+ (UIColor *)yyz_colorWithValidHexString:(NSString *)hexString isBeginWithAlpha:(BOOL)isBeginWithAlpha {
++ (UIColor *)yyz_colorWithValidHexString:(NSString *)hexString beginWithAlpha:(BOOL)isBeginWithAlpha {
     if (hexString && [hexString isKindOfClass:[NSString class]] && hexString.length == 6) {
         NSString *rstring = [hexString substringWithRange:NSMakeRange(0, 2)];
         NSString *gstring = [hexString substringWithRange:NSMakeRange(2, 2)];

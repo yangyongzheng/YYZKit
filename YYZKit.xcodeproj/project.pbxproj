@@ -272,6 +272,11 @@
 				TargetAttributes = {
 					CEE12DA922E0AC22008FC702 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					CEE12DC122E0AC24008FC702 = {
 						CreatedOnToolsVersion = 10.0;
