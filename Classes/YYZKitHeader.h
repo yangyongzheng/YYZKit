@@ -10,12 +10,13 @@
 #import "YYZPathManager.h"
 #import "YYZPhotoManager.h"
 #import "YYZTimerHolder.h"
+#import "YYZDevice.h"
 
 #import "NSData+YYZGZIP.h"
 #import "NSString+YYZAdditions.h"
 // UIKit
+#import "UIAlertController+YYZAdditions.h"
 #import "UIColor+YYZAdditions.h"
-#import "UIDevice+YYZAdditions.h"
 #import "UIView+YYZAlert.h"
 #import "UIView+YYZNibLoading.h"
 #import "UIViewController+YYZNibLoading.h"

@@ -5,8 +5,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class YYZTimerHolder;
 
-typedef void(^YYZTimerHolderBlock)(YYZTimerHolder *timerHolder);
-typedef void(^YYZTimerHolderCountdownBlock)(YYZTimerHolder *timerHolder, long currentMilliseconds);
+typedef void(^ YYZTimerHolderBlock)(YYZTimerHolder *timerHolder);
+typedef void(^ YYZTimerHolderCountdownBlock)(YYZTimerHolder *timerHolder, long currentMilliseconds);
 
 @interface YYZTimerHolder : NSObject
 
