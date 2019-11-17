@@ -27,6 +27,8 @@
 		CE70578623371648001F1D33 /* UIView+YYZAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70578523371648001F1D33 /* UIView+YYZAlert.m */; };
 		CE97BB2C237FBC9800036996 /* YYZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97BB2B237FBC9800036996 /* YYZDevice.m */; };
 		CE97BB2F237FC7E100036996 /* UIAlertController+YYZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97BB2E237FC7E100036996 /* UIAlertController+YYZAdditions.m */; };
+		CE9E164D23810CEA00241372 /* YYZAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E164C23810CEA00241372 /* YYZAlertViewController.m */; };
+		CE9E165323810DC500241372 /* YYZAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E165223810DC500241372 /* YYZAlertManager.m */; };
 		CEBCC88222E34E4600038041 /* YYZSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBCC88022E34E4600038041 /* YYZSearchView.m */; };
 		CEE12DB222E0AC22008FC702 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DB122E0AC22008FC702 /* ViewController.m */; };
 		CEE12DB522E0AC22008FC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE12DB322E0AC22008FC702 /* Main.storyboard */; };
@@ -87,6 +89,10 @@
 		CE97BB2B237FBC9800036996 /* YYZDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZDevice.m; sourceTree = "<group>"; };
 		CE97BB2D237FC7E100036996 /* UIAlertController+YYZAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+YYZAdditions.h"; sourceTree = "<group>"; };
 		CE97BB2E237FC7E100036996 /* UIAlertController+YYZAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+YYZAdditions.m"; sourceTree = "<group>"; };
+		CE9E164B23810CEA00241372 /* YYZAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZAlertViewController.h; sourceTree = "<group>"; };
+		CE9E164C23810CEA00241372 /* YYZAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZAlertViewController.m; sourceTree = "<group>"; };
+		CE9E165123810DC500241372 /* YYZAlertManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZAlertManager.h; sourceTree = "<group>"; };
+		CE9E165223810DC500241372 /* YYZAlertManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZAlertManager.m; sourceTree = "<group>"; };
 		CEBCC88022E34E4600038041 /* YYZSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYZSearchView.m; sourceTree = "<group>"; };
 		CEBCC88122E34E4600038041 /* YYZSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYZSearchView.h; sourceTree = "<group>"; };
 		CEE12DAA22E0AC22008FC702 /* YYZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +207,10 @@
 				CEE12DB122E0AC22008FC702 /* ViewController.m */,
 				CE545B9623129DFE0063BAF1 /* TestViewController.h */,
 				CE545B9723129DFE0063BAF1 /* TestViewController.m */,
+				CE9E165123810DC500241372 /* YYZAlertManager.h */,
+				CE9E165223810DC500241372 /* YYZAlertManager.m */,
+				CE9E164B23810CEA00241372 /* YYZAlertViewController.h */,
+				CE9E164C23810CEA00241372 /* YYZAlertViewController.m */,
 				CE17BC5B23375B6B00EF070B /* InputPasswordView.h */,
 				CE17BC5C23375B6B00EF070B /* InputPasswordView.m */,
 				CE17BC5823372E9900EF070B /* TestView.h */,
@@ -360,6 +370,8 @@
 				CE545B9223127ED40063BAF1 /* YYZTimerHolder.m in Sources */,
 				CE545BA92312B5FA0063BAF1 /* UIViewController+YYZNibLoading.m in Sources */,
 				CE545B8F231273020063BAF1 /* YYZAppMonitor.m in Sources */,
+				CE9E165323810DC500241372 /* YYZAlertManager.m in Sources */,
+				CE9E164D23810CEA00241372 /* YYZAlertViewController.m in Sources */,
 				CE45E033231A624D00DCB5A2 /* YYZGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

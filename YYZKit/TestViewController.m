@@ -56,7 +56,9 @@
     [view yyz_showWithAnimation:YYZAlertAnimationTypeNone completion:^{}];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [view yyz_hideWithAnimation:YYZAlertAnimationTypeFade completion:^{
-            
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
         }];
     });
 }

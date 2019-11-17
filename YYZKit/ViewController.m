@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "YYZKitHeader.h"
+#import "YYZAlertManager.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 @end
@@ -22,19 +24,32 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                message:@"描述内容信息"
-                                                         preferredStyle:UIAlertControllerStyleAlert
-                                                      cancelButtonTitle:@"我知道了"
-                                                      otherButtonTitles:@[@"联系客服"]
-                                                          actionHandler:^(NSInteger index) {
-                                                              if (index == -1) {
-                                                                  
-                                                              } else {
-                                                                  
-                                                              }
-                                                          }];
-    [self presentViewController:vc animated:YES completion:nil];
+//    NSLog(@"%@", UIApplication.sharedApplication.windows);
+//    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示"
+//                                                                message:@"描述内容信息"
+//                                                         preferredStyle:UIAlertControllerStyleAlert
+//                                                      cancelButtonTitle:@"我知道了"
+//                                                      otherButtonTitles:@[@"联系客服"]
+//                                                          actionHandler:^(NSInteger index) {
+//                                                              if (index == -1) {
+//                                                                  
+//                                                              } else {
+//                                                                  
+//                                                              }
+//                                                          }];
+//    [self presentViewController:vc animated:YES completion:nil];
+//    NSLog(@"%@", UIApplication.sharedApplication.windows);
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"%@", UIApplication.sharedApplication.windows);
+//    });
+    
+//    TestViewController *vc = TestViewController.testViewController;
+//    vc.view.frame = CGRectMake(0, 0, 300, 250);
+//    [YYZAlertManager showAlertController:vc presentingController:self completion:nil];
+    
+    TestViewController *vc2 = TestViewController.testViewController;
+    vc2.view.frame = CGRectMake(0, 0, YYZ_SCREEN_WIDTH, 250);
+    [YYZAlertManager showFormSheetController:vc2 presentingController:self completion:nil];
 }
 
 @end
