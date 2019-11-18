@@ -17,6 +17,7 @@
 // UIKit
 #import "UIAlertController+YYZAdditions.h"
 #import "UIColor+YYZAdditions.h"
+#import "UIView+YYZLayout.h"
 #import "UIView+YYZAlert.h"
 #import "UIView+YYZNibLoading.h"
 #import "UIViewController+YYZNibLoading.h"

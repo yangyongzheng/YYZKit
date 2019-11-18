@@ -1,0 +1,14 @@
+//
+//  YYZKitPrefixHeader.pch
+//  YYZKit
+//
+//  Created by yangyongzheng on 2019/11/18.
+//  Copyright © 2019 yoger. All rights reserved.
+//
+
+#ifndef YYZKitPrefixHeader_pch
+#define YYZKitPrefixHeader_pch
+
+#import "YYZKitHeader.h"
+
+#endif /* YYZKitPrefixHeader_pch */
