@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
            presentingController:(UIViewController *)presentingController
                      completion:(void (^ _Nullable)(void))completion;
 
++ (void)dismissViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+                   completion:(void (^ _Nullable)(void))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

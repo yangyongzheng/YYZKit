@@ -32,9 +32,9 @@
 //                                                      otherButtonTitles:@[@"联系客服"]
 //                                                          actionHandler:^(NSInteger index) {
 //                                                              if (index == -1) {
-//                                                                  
+//
 //                                                              } else {
-//                                                                  
+//
 //                                                              }
 //                                                          }];
 //    [self presentViewController:vc animated:YES completion:nil];
@@ -48,8 +48,10 @@
 //    [YYZAlertManager showAlertController:vc presentingController:self completion:nil];
     
     TestViewController *vc2 = TestViewController.testViewController;
-    vc2.view.frame = CGRectMake(0, 0, YYZ_SCREEN_WIDTH, 250);
-    [YYZAlertManager showFormSheetController:vc2 presentingController:self completion:nil];
+    vc2.view.frame = CGRectMake(0, 0, 320, 250);
+    [YYZAlertManager showAlertController:vc2 presentingController:self completion:^{
+        
+    }];
 }
 
 @end

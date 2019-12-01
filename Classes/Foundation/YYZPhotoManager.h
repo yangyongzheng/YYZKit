@@ -11,16 +11,16 @@ YYZKIT_EXTERN const NSInteger YYZPhotoAccessRestrictedErrorCode; // 照片访问
 + (instancetype)defaultManager;
 
 - (void)requestSaveImages:(NSArray<UIImage *> *)images
-             successBlock:(void(^)(void))successBlock
-             failureBlock:(void(^)(NSError *error))failureBlock;
+             successBlock:(void (^)(void))successBlock
+             failureBlock:(void (^)(NSError *error))failureBlock;
 
 - (void)requestSaveImageAtFileURL:(NSURL *)fileURL
-                     successBlock:(void(^)(void))successBlock
-                     failureBlock:(void(^)(NSError *error))failureBlock;
+                     successBlock:(void (^)(void))successBlock
+                     failureBlock:(void (^)(NSError *error))failureBlock;
 
 - (void)requestSaveVideoAtFileURL:(NSURL *)fileURL
-                     successBlock:(void(^)(void))successBlock
-                     failureBlock:(void(^)(NSError *error))failureBlock;
+                     successBlock:(void (^)(void))successBlock
+                     failureBlock:(void (^)(NSError *error))failureBlock;
 
 @end
 

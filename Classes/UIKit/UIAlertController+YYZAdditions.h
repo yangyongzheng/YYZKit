@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
                           preferredStyle:(UIAlertControllerStyle)preferredStyle
                        cancelButtonTitle:(nullable NSString *)cancelButtonTitle
                        otherButtonTitles:(nullable NSArray<NSString *> *)otherButtonTitles
-                           actionHandler:(void(^)(NSInteger index))actionHandler;
+                           actionHandler:(void (^)(NSInteger index))actionHandler;
 
 @end
 

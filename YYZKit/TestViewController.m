@@ -7,8 +7,10 @@
 //
 
 #import "TestViewController.h"
+#import "YYZAlertViewController.h"
 #import "YYZKitHeader.h"
 #import "TestView.h"
+#import "YYZAlertManager.h"
 
 @interface TestViewController () <YYZKeyboardMonitorDelegate>
 {
@@ -39,6 +41,10 @@
     NSLog(@"%@", [self.navigationItem.title yyz_MD5Encryption]);
 }
 
+- (void)dealloc {
+    
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     __weak typeof(self) weakSelf = self;
     _timerHolder = [[YYZTimerHolder alloc] init];
@@ -50,17 +56,9 @@
                                         }];
     [_timerHolder fire];
     
-    TestView *view = [[TestView alloc] initWithFrame:CGRectMake(0, 0, 270, 380)];
-    view.backgroundColor = UIColor.redColor;
-    [view yyz_showWithAnimation:YYZAlertAnimationTypeFade completion:^{}];
-    [view yyz_showWithAnimation:YYZAlertAnimationTypeNone completion:^{}];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [view yyz_hideWithAnimation:YYZAlertAnimationTypeFade completion:^{
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
-        }];
-    });
+    [YYZAlertManager dismissViewController:self animated:YES completion:^{
+        
+    }];
 }
 
 - (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillShow:(YYZKeyboardInfo *)info {

@@ -10,6 +10,7 @@
 		CE17BC5A23372E9900EF070B /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17BC5923372E9900EF070B /* TestView.m */; };
 		CE17BC5D23375B6B00EF070B /* InputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17BC5C23375B6B00EF070B /* InputPasswordView.m */; };
 		CE22C288237FFB5B00CF7904 /* UIView+YYZLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE22C287237FFB5B00CF7904 /* UIView+YYZLayout.m */; };
+		CE45963F2393AB5A00BD16A6 /* YYZAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45963E2393AB5A00BD16A6 /* YYZAlertBackgroundView.m */; };
 		CE45E02A231A14FF00DCB5A2 /* YYZDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45E029231A14FF00DCB5A2 /* YYZDateManager.m */; };
 		CE45E02D231A4DB800DCB5A2 /* YYZPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45E02C231A4DB800DCB5A2 /* YYZPathManager.m */; };
 		CE45E030231A4E3B00DCB5A2 /* NSString+YYZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45E02F231A4E3B00DCB5A2 /* NSString+YYZAdditions.m */; };
@@ -55,6 +56,8 @@
 		CE17BC5C23375B6B00EF070B /* InputPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputPasswordView.m; sourceTree = "<group>"; };
 		CE22C286237FFB5B00CF7904 /* UIView+YYZLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YYZLayout.h"; sourceTree = "<group>"; };
 		CE22C287237FFB5B00CF7904 /* UIView+YYZLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYZLayout.m"; sourceTree = "<group>"; };
+		CE45963D2393AB5A00BD16A6 /* YYZAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZAlertBackgroundView.h; sourceTree = "<group>"; };
+		CE45963E2393AB5A00BD16A6 /* YYZAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZAlertBackgroundView.m; sourceTree = "<group>"; };
 		CE45E028231A14FF00DCB5A2 /* YYZDateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZDateManager.h; sourceTree = "<group>"; };
 		CE45E029231A14FF00DCB5A2 /* YYZDateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZDateManager.m; sourceTree = "<group>"; };
 		CE45E02B231A4DB800DCB5A2 /* YYZPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZPathManager.h; sourceTree = "<group>"; };
@@ -138,16 +141,18 @@
 				CE69601A2338F851008220F5 /* UIColor+YYZAdditions.m */,
 				CE70578423371648001F1D33 /* UIView+YYZAlert.h */,
 				CE70578523371648001F1D33 /* UIView+YYZAlert.m */,
+				CE22C286237FFB5B00CF7904 /* UIView+YYZLayout.h */,
+				CE22C287237FFB5B00CF7904 /* UIView+YYZLayout.m */,
 				CE545B9C2312A4100063BAF1 /* UIView+YYZNibLoading.h */,
 				CE545B9D2312A4100063BAF1 /* UIView+YYZNibLoading.m */,
 				CE545BA72312B5FA0063BAF1 /* UIViewController+YYZNibLoading.h */,
 				CE545BA82312B5FA0063BAF1 /* UIViewController+YYZNibLoading.m */,
+				CE9E165123810DC500241372 /* YYZAlertManager.h */,
+				CE9E165223810DC500241372 /* YYZAlertManager.m */,
 				CE45E031231A624D00DCB5A2 /* YYZGradientView.h */,
 				CE45E032231A624D00DCB5A2 /* YYZGradientView.m */,
 				CEBCC88122E34E4600038041 /* YYZSearchView.h */,
 				CEBCC88022E34E4600038041 /* YYZSearchView.m */,
-				CE22C286237FFB5B00CF7904 /* UIView+YYZLayout.h */,
-				CE22C287237FFB5B00CF7904 /* UIView+YYZLayout.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -207,14 +212,14 @@
 				CEE12DB122E0AC22008FC702 /* ViewController.m */,
 				CE545B9623129DFE0063BAF1 /* TestViewController.h */,
 				CE545B9723129DFE0063BAF1 /* TestViewController.m */,
-				CE9E165123810DC500241372 /* YYZAlertManager.h */,
-				CE9E165223810DC500241372 /* YYZAlertManager.m */,
 				CE9E164B23810CEA00241372 /* YYZAlertViewController.h */,
 				CE9E164C23810CEA00241372 /* YYZAlertViewController.m */,
 				CE17BC5B23375B6B00EF070B /* InputPasswordView.h */,
 				CE17BC5C23375B6B00EF070B /* InputPasswordView.m */,
 				CE17BC5823372E9900EF070B /* TestView.h */,
 				CE17BC5923372E9900EF070B /* TestView.m */,
+				CE45963D2393AB5A00BD16A6 /* YYZAlertBackgroundView.h */,
+				CE45963E2393AB5A00BD16A6 /* YYZAlertBackgroundView.m */,
 				CEE12DB322E0AC22008FC702 /* Main.storyboard */,
 				CEE12DB622E0AC24008FC702 /* Assets.xcassets */,
 				CEE12DB822E0AC24008FC702 /* LaunchScreen.storyboard */,
@@ -350,6 +355,7 @@
 			files = (
 				CE45E030231A4E3B00DCB5A2 /* NSString+YYZAdditions.m in Sources */,
 				CEE12DBD22E0AC24008FC702 /* main.m in Sources */,
+				CE45963F2393AB5A00BD16A6 /* YYZAlertBackgroundView.m in Sources */,
 				CE97BB2F237FC7E100036996 /* UIAlertController+YYZAdditions.m in Sources */,
 				CE545B9E2312A4100063BAF1 /* UIView+YYZNibLoading.m in Sources */,
 				CE45E036231A6DCE00DCB5A2 /* NSData+YYZGZIP.m in Sources */,
