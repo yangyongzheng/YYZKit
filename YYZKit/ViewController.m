@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "YYZKitHeader.h"
-#import "YYZAlertManager.h"
 #import "TestViewController.h"
+#import "YYZAlertManager.h"
 
 @interface ViewController ()
 @end
@@ -20,7 +19,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Home Page";
-    self.view.backgroundColor = UIColor.yyz_hexString(@"66bb47");
+    self.view.backgroundColor = UIColor.yyz_hexString(@"39BF3E");
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

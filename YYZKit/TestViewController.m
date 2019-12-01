@@ -7,7 +7,6 @@
 //
 
 #import "TestViewController.h"
-#import "YYZAlertViewController.h"
 #import "YYZKitHeader.h"
 #import "TestView.h"
 #import "YYZAlertManager.h"
