@@ -7,15 +7,19 @@ typedef NS_ENUM(NSInteger, YYZPrivateAlertStyle) {
     YYZPrivateAlertStyleFormSheet,
 };
 
-@interface YYZPrivateAlertAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
-@property (nonatomic, readonly, assign) BOOL isPresentAnimation;
 
-+ (instancetype)animatedTransitioningWithFlag:(BOOL)isPresentAnimation;
+@interface YYZPrivateAlertAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
+@property (nonatomic, readonly, assign) BOOL yyz_privateIsPresentAnimation;
+
++ (YYZPrivateAlertAnimatedTransitioning *)animatedTransitioningWithFlag:(BOOL)isPresentAnimation;
 @end
+
 
 @interface YYZPrivateAlertTransitioningDelegate : NSObject <UIViewControllerTransitioningDelegate>
 
 @end
+
+
 
 @implementation UIViewController (YYZAlert)
 
@@ -78,9 +82,9 @@ typedef NS_ENUM(NSInteger, YYZPrivateAlertStyle) {
 
 @implementation YYZPrivateAlertAnimatedTransitioning
 
-+ (instancetype)animatedTransitioningWithFlag:(BOOL)isPresentAnimation {
-    YYZPrivateAlertAnimatedTransitioning *obj = [[[self class] alloc] init];
-    obj->_isPresentAnimation = isPresentAnimation;
++ (YYZPrivateAlertAnimatedTransitioning *)animatedTransitioningWithFlag:(BOOL)isPresentAnimation {
+    YYZPrivateAlertAnimatedTransitioning *obj = [[YYZPrivateAlertAnimatedTransitioning alloc] init];
+    obj->_yyz_privateIsPresentAnimation = isPresentAnimation;
     return obj;
 }
 
@@ -89,7 +93,7 @@ typedef NS_ENUM(NSInteger, YYZPrivateAlertStyle) {
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    if (self.isPresentAnimation) {
+    if (self.yyz_privateIsPresentAnimation) {
         [self presentTransitionAnimation:transitionContext];
     } else {
         [self dismissTransitionAnimation:transitionContext];

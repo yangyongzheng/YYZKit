@@ -9,7 +9,7 @@
 #import "TestViewController.h"
 #import "YYZKitHeader.h"
 #import "TestView.h"
-#import "YYZAlertManager.h"
+#import "UIViewController+YYZAlert.h"
 
 @interface TestViewController () <YYZKeyboardMonitorDelegate>
 {
@@ -55,7 +55,7 @@
                                         }];
     [_timerHolder fire];
     
-    [YYZAlertManager dismissViewController:self animated:YES completion:^{
+    [self dismissViewControllerAnimated:YES completion:^{
         
     }];
 }

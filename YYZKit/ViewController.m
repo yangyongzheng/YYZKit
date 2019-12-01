@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "TestViewController.h"
-#import "YYZAlertManager.h"
+#import "UIViewController+YYZAlert.h"
 
 @interface ViewController ()
 @end
@@ -42,13 +42,9 @@
 //        NSLog(@"%@", UIApplication.sharedApplication.windows);
 //    });
     
-//    TestViewController *vc = TestViewController.testViewController;
-//    vc.view.frame = CGRectMake(0, 0, 300, 250);
-//    [YYZAlertManager showAlertController:vc presentingController:self completion:nil];
-    
     TestViewController *vc2 = TestViewController.testViewController;
     vc2.view.frame = CGRectMake(0, 0, 320, 250);
-    [YYZAlertManager showAlertController:vc2 presentingController:self completion:^{
+    [self yyz_showFormSheetController:vc2 completion:^{
         
     }];
 }
