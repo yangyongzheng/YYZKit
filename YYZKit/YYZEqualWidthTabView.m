@@ -48,15 +48,16 @@
                  tellsDelegate:YES];
 }
 
-- (void)reloadData {
-    [self constructDataSource];
-    [self.collectionView reloadData];
-    [self refreshIndicatorViewAnimated:NO];
-}
-
-- (void)reloadTabBadges {
-    [self constructTabBadges];
-    [self.collectionView reloadData];
+- (void)reloadDataWithScope:(YYZEqualWidthTabScope)scope {
+    switch (scope) {
+        case YYZEqualWidthTabScopeBadge:
+            [self reloadDataScopeBadge];
+            break;
+            
+        default:
+            [self reloadDataScopeAll];
+            break;
+    }
 }
 
 #pragma mark - Delegates
@@ -125,6 +126,17 @@
 }
 
 #pragma mark - Misc
+- (void)reloadDataScopeAll {
+    [self constructDataSource];
+    [self.collectionView reloadData];
+    [self refreshIndicatorViewAnimated:NO];
+}
+
+- (void)reloadDataScopeBadge {
+    [self constructTabBadges];
+    [self.collectionView reloadData];
+}
+
 - (void)constructDataSource {
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(titlesForEqualWidthTabView:)]) {
         NSArray *titleArray = [self.dataSource titlesForEqualWidthTabView:self];

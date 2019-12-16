@@ -20,77 +20,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPz-LK-tdU" customClass="TestView">
-                                <rect key="frame" x="15" y="94" width="345" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="SPb-ic-ajm"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0h-N4-O9S">
-                                <rect key="frame" x="10" y="164" width="30" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="D27-O4-bde"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Vci-b4-bf7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="G0h-N4-O9S" firstAttribute="top" secondItem="OPz-LK-tdU" secondAttribute="bottom" constant="10" id="G7E-m2-kpe"/>
-                            <constraint firstAttribute="trailing" secondItem="OPz-LK-tdU" secondAttribute="trailing" constant="15" id="HzX-zi-FM4"/>
-                            <constraint firstItem="OPz-LK-tdU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="MSa-sO-e9h"/>
-                            <constraint firstItem="G0h-N4-O9S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="UKz-zG-nVV"/>
-                            <constraint firstItem="OPz-LK-tdU" firstAttribute="top" secondItem="Lxv-Qh-Q4e" secondAttribute="bottom" constant="30" id="xq8-l0-iVh"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X9U-oi-BO2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="-672"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="fwD-HV-gHv">
-            <objects>
-                <viewController storyboardIdentifier="TestViewController" id="pib-r3-3k2" customClass="TestViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pgy-d7-ML7"/>
-                        <viewControllerLayoutGuide type="bottom" id="U1b-t7-9U8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mtP-X9-wQx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-pT-MK9">
-                                <rect key="frame" x="15" y="40" width="345" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0yw-lK-rj1"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Sx3-pT-MK9" firstAttribute="top" secondItem="pgy-d7-ML7" secondAttribute="bottom" constant="20" id="TQe-7Q-30P"/>
-                            <constraint firstAttribute="trailing" secondItem="Sx3-pT-MK9" secondAttribute="trailing" constant="15" id="bMN-2x-qhh"/>
-                            <constraint firstItem="Sx3-pT-MK9" firstAttribute="leading" secondItem="mtP-X9-wQx" secondAttribute="leading" constant="15" id="lrG-Me-V3G"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zmb-xX-6W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2062" y="-672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lH-GY-5Mw">

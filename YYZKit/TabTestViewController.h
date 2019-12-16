@@ -1,8 +1,8 @@
 //
-//  InputPasswordView.h
+//  TabTestViewController.h
 //  YYZKit
 //
-//  Created by 杨永正 on 2019/9/22.
+//  Created by 杨永正 on 2019/12/16.
 //  Copyright © 2019 yoger. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InputPasswordView : UIView
-
-+ (InputPasswordView *)passwordView;
+@interface TabTestViewController : UIViewController
 
 @end
 

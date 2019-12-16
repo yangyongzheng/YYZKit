@@ -10,5 +10,6 @@
 #define YYZKitPrefixHeader_pch
 
 #import "YYZKitHeader.h"
+#import "NSLayoutConstraint+YYZAdditional.h"
 
 #endif /* YYZKitPrefixHeader_pch */

@@ -7,14 +7,10 @@
 //
 
 #import "TestViewController.h"
-#import "YYZKitHeader.h"
-#import "TestView.h"
-#import "UIViewController+YYZAlert.h"
+#import "TabTestViewController.h"
 
-@interface TestViewController () <YYZKeyboardMonitorDelegate>
-{
-    YYZTimerHolder *_timerHolder;
-}
+@interface TestViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation TestViewController
@@ -29,43 +25,57 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"测试";
-    [YYZKeyboardMonitor addDelegate:self];
-    [YYZKeyboardMonitor addDelegate:self];
-    [self.view yyz_makeGradient:^(YYZGradientMaker * _Nonnull maker) {
-        maker.colors = @[UIColor.yellowColor, UIColor.redColor, UIColor.redColor];
-        maker.locations = @[@0.5, @0.75, @1.0];
-        maker.startPoint = CGPointMake(0.5, 0.0);
-        maker.endPoint = CGPointMake(0.5, 1.0);
-    }];
-    NSLog(@"%@", [self.navigationItem.title yyz_MD5Encryption]);
+    self.view.backgroundColor = UIColor.whiteColor;
+    [self.view addSubview:self.tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)dealloc {
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    __weak typeof(self) weakSelf = self;
-    _timerHolder = [[YYZTimerHolder alloc] init];
-    [_timerHolder scheduledTimerWithCountdown:6000
-                         intervalMilliseconds:1000
-                                        block:^(YYZTimerHolder * _Nonnull timerHolder, long currentMilliseconds) {
-                                            __strong typeof(weakSelf) strongSelf = weakSelf;
-                                            NSLog(@"%@-%ld", strongSelf, currentMilliseconds/1000);
-                                        }];
-    [_timerHolder fire];
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+#pragma mark - UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
-- (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillShow:(YYZKeyboardInfo *)info {
-    [YYZKeyboardMonitor removeDelegate:self];
+#pragma mark - UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"default cell"];
+    if (!cell) {cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"default cell"];}
+    cell.textLabel.text = @"YYZEqualWidthTabView 示例";
+    return cell;
 }
 
-- (void)keyboardMonitor:(YYZKeyboardMonitor *)keyboardMonitor keyboardWillHide:(YYZKeyboardInfo *)info {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.row == 0) {
+        TabTestViewController *vc = [[TabTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _tableView.rowHeight = 44;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        _tableView.backgroundColor = UIColor.clearColor;
+        _tableView.tableFooterView = UIView.new;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.separatorColor = UIColor.grayColor;
+    }
+    return _tableView;
 }
 
 @end

@@ -12,20 +12,31 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 重新加载数据的作用域
+
+ - YYZEqualWidthTabScopeAll: 重新加载 标题+角标
+ - YYZEqualWidthTabScopeBadge: 重新加载 角标
+ */
+typedef NS_ENUM(NSInteger, YYZEqualWidthTabScope) {
+    YYZEqualWidthTabScopeAll,
+    YYZEqualWidthTabScopeBadge,
+};
+
 @class YYZEqualWidthTabView;
 
 @protocol YYZEqualWidthTabViewDelegate <NSObject>
 
-- (void)equalWidthTabView:(YYZEqualWidthTabView *)equalWidthTabView
+- (void)equalWidthTabView:(YYZEqualWidthTabView *)tabView
      didSelectItemAtIndex:(NSInteger)index
             isUserTrigger:(BOOL)isUserTrigger;
 @end
 
 @protocol YYZEqualWidthTabViewDataSource <NSObject>
 @required
-- (nullable NSArray<NSString *> *)titlesForEqualWidthTabView:(YYZEqualWidthTabView *)equalWidthTabView;
+- (nullable NSArray<NSString *> *)titlesForEqualWidthTabView:(YYZEqualWidthTabView *)tabView;
 @optional
-- (nullable id <YYZEWTabItemBadgeProvider>)equalWidthTabView:(YYZEqualWidthTabView *)equalWidthTabView
+- (nullable id <YYZEWTabItemBadgeProvider>)equalWidthTabView:(YYZEqualWidthTabView *)tabView
                                  badgeProviderForItemAtIndex:(NSInteger)index;
 @end
 
@@ -41,11 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
                     animated:(BOOL)animated
                isUserTrigger:(BOOL)isUserTrigger;
 
-/** 当Tab标题及其角标发生变化时调用此API更新，如只更新Tab角标请调用 reloadTabBadges API. */
-- (void)reloadData;
-
-/** 更新Tab角标数据（注意不会更新Tab标题） */
-- (void)reloadTabBadges;
+- (void)reloadDataWithScope:(YYZEqualWidthTabScope)scope;
 
 @end
 

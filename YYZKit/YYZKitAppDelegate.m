@@ -11,6 +11,7 @@
 @implementation YYZKitAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window.backgroundColor = UIColor.redColor;
     return YES;
 }
 
