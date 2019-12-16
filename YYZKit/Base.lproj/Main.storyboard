@@ -28,11 +28,26 @@
                                     <constraint firstAttribute="height" constant="60" id="SPb-ic-ajm"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0h-N4-O9S">
+                                <rect key="frame" x="10" y="164" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="D27-O4-bde"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Vci-b4-bf7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="G0h-N4-O9S" firstAttribute="top" secondItem="OPz-LK-tdU" secondAttribute="bottom" constant="10" id="G7E-m2-kpe"/>
                             <constraint firstAttribute="trailing" secondItem="OPz-LK-tdU" secondAttribute="trailing" constant="15" id="HzX-zi-FM4"/>
                             <constraint firstItem="OPz-LK-tdU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="MSa-sO-e9h"/>
+                            <constraint firstItem="G0h-N4-O9S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="UKz-zG-nVV"/>
                             <constraint firstItem="OPz-LK-tdU" firstAttribute="top" secondItem="Lxv-Qh-Q4e" secondAttribute="bottom" constant="30" id="xq8-l0-iVh"/>
                         </constraints>
                     </view>
