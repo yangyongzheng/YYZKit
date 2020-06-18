@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                       公共基础套件，包含了常用工具类和常用组件封装。
                    DESC
-  s.platform = :ios, "8.0"
-  s.ios.deployment_target = "8.0"
+  s.platform = :ios, "9.0"
+  s.ios.deployment_target = "9.0"
   s.requires_arc = true
   # s.dependency "AFNetworking", "~> 3.2.1"
   # s.framework = "SomeFramework"

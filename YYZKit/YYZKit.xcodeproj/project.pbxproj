@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92A76CE02817A82EDA7CAA75 /* libPods-YYZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */; };
+		C3E6270E0EE922EFEEB9D0D5 /* libPods-YYZKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */; };
 		CEDD282323A9B89F007F5C19 /* YYZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDD281923A9B89F007F5C19 /* YYZKit.framework */; };
 		CEDD282823A9B8A0007F5C19 /* YYZKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD282723A9B8A0007F5C19 /* YYZKitTests.m */; };
 		CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDD281C23A9B89F007F5C19 /* YYZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B2E3B6DDDC78179C4CF0C8A /* Pods-YYZKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKitTests.release.xcconfig"; path = "Target Support Files/Pods-YYZKitTests/Pods-YYZKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3779C40709A761BD6AD77FED /* Pods-YYZKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKit.debug.xcconfig"; path = "Target Support Files/Pods-YYZKit/Pods-YYZKit.debug.xcconfig"; sourceTree = "<group>"; };
+		6037AF351E10FF1B524DCE6E /* Pods-YYZKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKitTests.debug.xcconfig"; path = "Target Support Files/Pods-YYZKitTests/Pods-YYZKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96C0891DECFF847DB4F796C4 /* Pods-YYZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKit.release.xcconfig"; path = "Target Support Files/Pods-YYZKit/Pods-YYZKit.release.xcconfig"; sourceTree = "<group>"; };
+		CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD281923A9B89F007F5C19 /* YYZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD281C23A9B89F007F5C19 /* YYZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKit.h; sourceTree = "<group>"; };
 		CEDD281D23A9B89F007F5C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A76CE02817A82EDA7CAA75 /* libPods-YYZKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEDD282323A9B89F007F5C19 /* YYZKit.framework in Frameworks */,
+				C3E6270E0EE922EFEEB9D0D5 /* libPods-YYZKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205628ABFB0C11B3924AD489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */,
+				CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A998F99B7121D8456662D277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3779C40709A761BD6AD77FED /* Pods-YYZKit.debug.xcconfig */,
+				96C0891DECFF847DB4F796C4 /* Pods-YYZKit.release.xcconfig */,
+				6037AF351E10FF1B524DCE6E /* Pods-YYZKitTests.debug.xcconfig */,
+				1B2E3B6DDDC78179C4CF0C8A /* Pods-YYZKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		CEDD280F23A9B89F007F5C19 = {
 			isa = PBXGroup;
 			children = (
 				CEDD281B23A9B89F007F5C19 /* YYZKit */,
 				CEDD282623A9B89F007F5C19 /* YYZKitTests */,
 				CEDD281A23A9B89F007F5C19 /* Products */,
+				A998F99B7121D8456662D277 /* Pods */,
+				205628ABFB0C11B3924AD489 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEDD282D23A9B8A0007F5C19 /* Build configuration list for PBXNativeTarget "YYZKit" */;
 			buildPhases = (
+				7D486AB27C8A567D7BFCEE0E /* [CP] Check Pods Manifest.lock */,
 				CEDD281423A9B89F007F5C19 /* Headers */,
 				CEDD281523A9B89F007F5C19 /* Sources */,
 				CEDD281623A9B89F007F5C19 /* Frameworks */,
@@ -122,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEDD283023A9B8A0007F5C19 /* Build configuration list for PBXNativeTarget "YYZKitTests" */;
 			buildPhases = (
+				1BE6AA7D02D377BB6A52A433 /* [CP] Check Pods Manifest.lock */,
 				CEDD281E23A9B89F007F5C19 /* Sources */,
 				CEDD281F23A9B89F007F5C19 /* Frameworks */,
 				CEDD282023A9B89F007F5C19 /* Resources */,
@@ -188,6 +223,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BE6AA7D02D377BB6A52A433 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YYZKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D486AB27C8A567D7BFCEE0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YYZKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEDD281523A9B89F007F5C19 /* Sources */ = {
@@ -267,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -334,6 +416,7 @@
 		};
 		CEDD282E23A9B8A0007F5C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3779C40709A761BD6AD77FED /* Pods-YYZKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +441,7 @@
 		};
 		CEDD282F23A9B8A0007F5C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96C0891DECFF847DB4F796C4 /* Pods-YYZKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -382,6 +466,7 @@
 		};
 		CEDD283123A9B8A0007F5C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6037AF351E10FF1B524DCE6E /* Pods-YYZKitTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YYZKitTests/Info.plist;
@@ -398,6 +483,7 @@
 		};
 		CEDD283223A9B8A0007F5C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B2E3B6DDDC78179C4CF0C8A /* Pods-YYZKitTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YYZKitTests/Info.plist;
