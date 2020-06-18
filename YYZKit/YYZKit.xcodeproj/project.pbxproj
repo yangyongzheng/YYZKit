@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F3DCE29249B07960099A8B0 /* YYZKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3DCE27249B07960099A8B0 /* YYZKitDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3DCE2A249B07960099A8B0 /* YYZKitDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE28249B07960099A8B0 /* YYZKitDefines.m */; };
+		6F3DCE2D249B09C20099A8B0 /* YYZTimerHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3DCE2B249B09C20099A8B0 /* YYZTimerHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3DCE2E249B09C20099A8B0 /* YYZTimerHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE2C249B09C20099A8B0 /* YYZTimerHolder.m */; };
+		6F3DCE31249B0A0E0099A8B0 /* YYZKeyboardMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3DCE2F249B0A0E0099A8B0 /* YYZKeyboardMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3DCE32249B0A0E0099A8B0 /* YYZKeyboardMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE30249B0A0E0099A8B0 /* YYZKeyboardMonitor.m */; };
+		6F3DCE35249B0A6B0099A8B0 /* YYZApplicationMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3DCE33249B0A6B0099A8B0 /* YYZApplicationMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3DCE36249B0A6B0099A8B0 /* YYZApplicationMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE34249B0A6B0099A8B0 /* YYZApplicationMonitor.m */; };
+		6F3DCE39249B0ACA0099A8B0 /* UIColor+YYZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3DCE37249B0ACA0099A8B0 /* UIColor+YYZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3DCE3A249B0ACA0099A8B0 /* UIColor+YYZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */; };
 		92A76CE02817A82EDA7CAA75 /* libPods-YYZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */; };
 		C3E6270E0EE922EFEEB9D0D5 /* libPods-YYZKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */; };
 		CEDD282323A9B89F007F5C19 /* YYZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDD281923A9B89F007F5C19 /* YYZKit.framework */; };
@@ -29,6 +39,16 @@
 		2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3779C40709A761BD6AD77FED /* Pods-YYZKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKit.debug.xcconfig"; path = "Target Support Files/Pods-YYZKit/Pods-YYZKit.debug.xcconfig"; sourceTree = "<group>"; };
 		6037AF351E10FF1B524DCE6E /* Pods-YYZKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKitTests.debug.xcconfig"; path = "Target Support Files/Pods-YYZKitTests/Pods-YYZKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F3DCE27249B07960099A8B0 /* YYZKitDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKitDefines.h; sourceTree = "<group>"; };
+		6F3DCE28249B07960099A8B0 /* YYZKitDefines.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZKitDefines.m; sourceTree = "<group>"; };
+		6F3DCE2B249B09C20099A8B0 /* YYZTimerHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZTimerHolder.h; sourceTree = "<group>"; };
+		6F3DCE2C249B09C20099A8B0 /* YYZTimerHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZTimerHolder.m; sourceTree = "<group>"; };
+		6F3DCE2F249B0A0E0099A8B0 /* YYZKeyboardMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKeyboardMonitor.h; sourceTree = "<group>"; };
+		6F3DCE30249B0A0E0099A8B0 /* YYZKeyboardMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZKeyboardMonitor.m; sourceTree = "<group>"; };
+		6F3DCE33249B0A6B0099A8B0 /* YYZApplicationMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZApplicationMonitor.h; sourceTree = "<group>"; };
+		6F3DCE34249B0A6B0099A8B0 /* YYZApplicationMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZApplicationMonitor.m; sourceTree = "<group>"; };
+		6F3DCE37249B0ACA0099A8B0 /* UIColor+YYZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+YYZKit.h"; sourceTree = "<group>"; };
+		6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YYZKit.m"; sourceTree = "<group>"; };
 		96C0891DECFF847DB4F796C4 /* Pods-YYZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKit.release.xcconfig"; path = "Target Support Files/Pods-YYZKit/Pods-YYZKit.release.xcconfig"; sourceTree = "<group>"; };
 		CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD281923A9B89F007F5C19 /* YYZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +125,16 @@
 			isa = PBXGroup;
 			children = (
 				CEDD281C23A9B89F007F5C19 /* YYZKit.h */,
+				6F3DCE27249B07960099A8B0 /* YYZKitDefines.h */,
+				6F3DCE28249B07960099A8B0 /* YYZKitDefines.m */,
+				6F3DCE2B249B09C20099A8B0 /* YYZTimerHolder.h */,
+				6F3DCE2C249B09C20099A8B0 /* YYZTimerHolder.m */,
+				6F3DCE33249B0A6B0099A8B0 /* YYZApplicationMonitor.h */,
+				6F3DCE34249B0A6B0099A8B0 /* YYZApplicationMonitor.m */,
+				6F3DCE2F249B0A0E0099A8B0 /* YYZKeyboardMonitor.h */,
+				6F3DCE30249B0A0E0099A8B0 /* YYZKeyboardMonitor.m */,
+				6F3DCE37249B0ACA0099A8B0 /* UIColor+YYZKit.h */,
+				6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */,
 				CEDD281D23A9B89F007F5C19 /* Info.plist */,
 			);
 			path = YYZKit;
@@ -126,7 +156,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3DCE39249B0ACA0099A8B0 /* UIColor+YYZKit.h in Headers */,
 				CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */,
+				6F3DCE35249B0A6B0099A8B0 /* YYZApplicationMonitor.h in Headers */,
+				6F3DCE29249B07960099A8B0 /* YYZKitDefines.h in Headers */,
+				6F3DCE2D249B09C20099A8B0 /* YYZTimerHolder.h in Headers */,
+				6F3DCE31249B0A0E0099A8B0 /* YYZKeyboardMonitor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3DCE2E249B09C20099A8B0 /* YYZTimerHolder.m in Sources */,
+				6F3DCE2A249B07960099A8B0 /* YYZKitDefines.m in Sources */,
+				6F3DCE3A249B0ACA0099A8B0 /* UIColor+YYZKit.m in Sources */,
+				6F3DCE36249B0A6B0099A8B0 /* YYZApplicationMonitor.m in Sources */,
+				6F3DCE32249B0A0E0099A8B0 /* YYZKeyboardMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

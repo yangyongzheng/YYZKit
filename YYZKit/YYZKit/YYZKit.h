@@ -16,4 +16,9 @@ FOUNDATION_EXPORT const unsigned char YYZKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YYZKit/PublicHeader.h>
 
-#define SCREEN_WIDTH 1
+#import "YYZKitDefines.h"
+#import "YYZTimerHolder.h"
+#import "YYZApplicationMonitor.h"
+#import "YYZKeyboardMonitor.h"
+
+#import "UIColor+YYZKit.h"
