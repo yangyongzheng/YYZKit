@@ -8,14 +8,10 @@ project 'YYZMainProj/YYZMainProj'      # 主体工程
 platform :ios, '9.0'
 inhibit_all_warnings!  # 禁止CocoaPods库中的所有警告
 
-def commonPods
-    pod 'FMDB'
-end
-
 # This Target can be found in a Xcode project called `YYZKit`
 target 'YYZKit' do
     project 'YYZKit/YYZKit'
-    commonPods
+    pod 'FMDB'
     
     target 'YYZKitTests' do
         inherit! :search_paths
@@ -25,7 +21,6 @@ end
 # Same Podfile, multiple Xcodeprojects
 target 'YYZMainProj' do
     project 'YYZMainProj/YYZMainProj'
-    commonPods
 
     pod 'SDWebImage', '~> 5.8.1'
     pod 'AFNetworking', '~> 4.0.1'

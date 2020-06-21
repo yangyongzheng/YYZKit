@@ -19,6 +19,8 @@
 		6F3DCE3A249B0ACA0099A8B0 /* UIColor+YYZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */; };
 		92A76CE02817A82EDA7CAA75 /* libPods-YYZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEFB0608AE66BB16E07407A /* libPods-YYZKit.a */; };
 		C3E6270E0EE922EFEEB9D0D5 /* libPods-YYZKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */; };
+		CEA0E405249EFA4900F3EEB3 /* YYZKitFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA0E403249EFA4900F3EEB3 /* YYZKitFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA0E406249EFA4900F3EEB3 /* YYZKitFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0E404249EFA4900F3EEB3 /* YYZKitFunctions.m */; };
 		CEDD282323A9B89F007F5C19 /* YYZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDD281923A9B89F007F5C19 /* YYZKit.framework */; };
 		CEDD282823A9B8A0007F5C19 /* YYZKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD282723A9B8A0007F5C19 /* YYZKitTests.m */; };
 		CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDD281C23A9B89F007F5C19 /* YYZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +53,8 @@
 		6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YYZKit.m"; sourceTree = "<group>"; };
 		96C0891DECFF847DB4F796C4 /* Pods-YYZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZKit.release.xcconfig"; path = "Target Support Files/Pods-YYZKit/Pods-YYZKit.release.xcconfig"; sourceTree = "<group>"; };
 		CA38B67C9FB67C1B6F9CEEDC /* libPods-YYZKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA0E403249EFA4900F3EEB3 /* YYZKitFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKitFunctions.h; sourceTree = "<group>"; };
+		CEA0E404249EFA4900F3EEB3 /* YYZKitFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZKitFunctions.m; sourceTree = "<group>"; };
 		CEDD281923A9B89F007F5C19 /* YYZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD281C23A9B89F007F5C19 /* YYZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKit.h; sourceTree = "<group>"; };
 		CEDD281D23A9B89F007F5C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				CEDD281C23A9B89F007F5C19 /* YYZKit.h */,
 				6F3DCE27249B07960099A8B0 /* YYZKitDefines.h */,
 				6F3DCE28249B07960099A8B0 /* YYZKitDefines.m */,
+				CEA0E403249EFA4900F3EEB3 /* YYZKitFunctions.h */,
+				CEA0E404249EFA4900F3EEB3 /* YYZKitFunctions.m */,
 				6F3DCE2B249B09C20099A8B0 /* YYZTimerHolder.h */,
 				6F3DCE2C249B09C20099A8B0 /* YYZTimerHolder.m */,
 				6F3DCE33249B0A6B0099A8B0 /* YYZApplicationMonitor.h */,
@@ -157,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F3DCE39249B0ACA0099A8B0 /* UIColor+YYZKit.h in Headers */,
+				CEA0E405249EFA4900F3EEB3 /* YYZKitFunctions.h in Headers */,
 				CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */,
 				6F3DCE35249B0A6B0099A8B0 /* YYZApplicationMonitor.h in Headers */,
 				6F3DCE29249B07960099A8B0 /* YYZKitDefines.h in Headers */,
@@ -312,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F3DCE2E249B09C20099A8B0 /* YYZTimerHolder.m in Sources */,
+				CEA0E406249EFA4900F3EEB3 /* YYZKitFunctions.m in Sources */,
 				6F3DCE2A249B07960099A8B0 /* YYZKitDefines.m in Sources */,
 				6F3DCE3A249B0ACA0099A8B0 /* UIColor+YYZKit.m in Sources */,
 				6F3DCE36249B0A6B0099A8B0 /* YYZApplicationMonitor.m in Sources */,
