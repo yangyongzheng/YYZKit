@@ -21,5 +21,6 @@ FOUNDATION_EXPORT const unsigned char YYZKitVersionString[];
 #import "YYZTimerHolder.h"
 #import "YYZApplicationMonitor.h"
 #import "YYZKeyboardMonitor.h"
+#import "YYZDateManager.h"
 
 #import "UIColor+YYZKit.h"

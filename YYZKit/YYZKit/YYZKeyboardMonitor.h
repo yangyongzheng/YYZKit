@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class YYZKeyboardMonitor;
+
+@protocol YYZKeyboardMonitorDelegate <NSObject>
+
+@optional
+
+@end
+
 @interface YYZKeyboardMonitor : NSObject
 
 @end
