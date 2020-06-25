@@ -10,7 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define YYZColorIsValidHexString(hexString) [UIColor isValidHexString:hexString]
+#define YYZColorWithRGBA(hexString) [UIColor colorWithRGBAHexString:hexString]
+#define YYZColorWithARGB(hexString) [UIColor colorWithARGBHexString:hexString]
+
 @interface UIColor (YYZKit)
+
++ (BOOL)isValidHexString:(NSString *)hexString;
+
++ (UIColor *)colorWithRGBAHexString:(NSString *)hexString;
+
++ (UIColor *)colorWithARGBHexString:(NSString *)hexString;
 
 @end
 
