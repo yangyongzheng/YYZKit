@@ -23,6 +23,8 @@
 		CE04F9E6249F2C4E00E1EF93 /* YYZDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04F9E4249F2C4E00E1EF93 /* YYZDateManager.m */; };
 		CEA0E405249EFA4900F3EEB3 /* YYZKitFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA0E403249EFA4900F3EEB3 /* YYZKitFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEA0E406249EFA4900F3EEB3 /* YYZKitFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0E404249EFA4900F3EEB3 /* YYZKitFunctions.m */; };
+		CEC9C95924C7200D00A67EE3 /* YYZDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = CEC9C95724C7200D00A67EE3 /* YYZDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEC9C95A24C7200D00A67EE3 /* YYZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC9C95824C7200D00A67EE3 /* YYZDevice.m */; };
 		CEDD282323A9B89F007F5C19 /* YYZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDD281923A9B89F007F5C19 /* YYZKit.framework */; };
 		CEDD282823A9B8A0007F5C19 /* YYZKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD282723A9B8A0007F5C19 /* YYZKitTests.m */; };
 		CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDD281C23A9B89F007F5C19 /* YYZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +61,8 @@
 		CE04F9E4249F2C4E00E1EF93 /* YYZDateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZDateManager.m; sourceTree = "<group>"; };
 		CEA0E403249EFA4900F3EEB3 /* YYZKitFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKitFunctions.h; sourceTree = "<group>"; };
 		CEA0E404249EFA4900F3EEB3 /* YYZKitFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZKitFunctions.m; sourceTree = "<group>"; };
+		CEC9C95724C7200D00A67EE3 /* YYZDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZDevice.h; sourceTree = "<group>"; };
+		CEC9C95824C7200D00A67EE3 /* YYZDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYZDevice.m; sourceTree = "<group>"; };
 		CEDD281923A9B89F007F5C19 /* YYZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD281C23A9B89F007F5C19 /* YYZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYZKit.h; sourceTree = "<group>"; };
 		CEDD281D23A9B89F007F5C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				6F3DCE30249B0A0E0099A8B0 /* YYZKeyboardMonitor.m */,
 				CE04F9E3249F2C4E00E1EF93 /* YYZDateManager.h */,
 				CE04F9E4249F2C4E00E1EF93 /* YYZDateManager.m */,
+				CEC9C95724C7200D00A67EE3 /* YYZDevice.h */,
+				CEC9C95824C7200D00A67EE3 /* YYZDevice.m */,
 				6F3DCE37249B0ACA0099A8B0 /* UIColor+YYZKit.h */,
 				6F3DCE38249B0ACA0099A8B0 /* UIColor+YYZKit.m */,
 				CEDD281D23A9B89F007F5C19 /* Info.plist */,
@@ -173,6 +179,7 @@
 				CEDD282A23A9B8A0007F5C19 /* YYZKit.h in Headers */,
 				CE04F9E5249F2C4E00E1EF93 /* YYZDateManager.h in Headers */,
 				6F3DCE35249B0A6B0099A8B0 /* YYZApplicationMonitor.h in Headers */,
+				CEC9C95924C7200D00A67EE3 /* YYZDevice.h in Headers */,
 				6F3DCE29249B07960099A8B0 /* YYZKitDefines.h in Headers */,
 				6F3DCE2D249B09C20099A8B0 /* YYZTimerHolder.h in Headers */,
 				6F3DCE31249B0A0E0099A8B0 /* YYZKeyboardMonitor.h in Headers */,
@@ -327,6 +334,7 @@
 			files = (
 				6F3DCE2E249B09C20099A8B0 /* YYZTimerHolder.m in Sources */,
 				CEA0E406249EFA4900F3EEB3 /* YYZKitFunctions.m in Sources */,
+				CEC9C95A24C7200D00A67EE3 /* YYZDevice.m in Sources */,
 				6F3DCE2A249B07960099A8B0 /* YYZKitDefines.m in Sources */,
 				6F3DCE3A249B0ACA0099A8B0 /* UIColor+YYZKit.m in Sources */,
 				6F3DCE36249B0A6B0099A8B0 /* YYZApplicationMonitor.m in Sources */,
