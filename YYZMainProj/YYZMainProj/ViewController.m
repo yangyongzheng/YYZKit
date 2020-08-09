@@ -7,16 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "DateTableViewCell.h"
-#import "TitleHeaderView.h"
-#import <YYZKit/YYZKit.h>
-#import "YearMonth.h"
-#import "SDDDateProvider.h"
+#import "SupplyZiZhiExampleViewController.h"
+#import "SupplyZiZhiImageBrowserViewController.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (nonatomic, copy) NSArray<NSArray<SDDDateItem *> *> *viewModels;
 @end
 
 @implementation ViewController
@@ -24,69 +19,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setup];
-    [self.tableView registerNib:[UINib nibWithNibName:@"DateTableViewCell" bundle:NSBundle.mainBundle]
-         forCellReuseIdentifier:@"DateTableViewCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"TitleHeaderView" bundle:NSBundle.mainBundle]
-forHeaderFooterViewReuseIdentifier:@"TitleHeaderView"];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.tableView.userInteractionEnabled = NO;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.viewModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModels[section].count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DateTableViewCell"];
-    SDDDateItem *model = self.viewModels[indexPath.section][indexPath.row];
-    cell.monthLabel.text = [NSString stringWithFormat:@"%02ld月", model.monthNum];
-    NSArray<UIButton *> *buttons = cell.stackView.arrangedSubviews;
-    if (model.enabledMonthPeriods & SDDDateMonthPeriodFirst) {
-        buttons[0].backgroundColor = UIColor.greenColor;
-    } else {
-        buttons[0].backgroundColor = UIColor.grayColor;
-    }
-    if (model.enabledMonthPeriods & SDDDateMonthPeriodSecond) {
-        buttons[1].backgroundColor = UIColor.greenColor;
-    } else {
-        buttons[1].backgroundColor = UIColor.grayColor;
-    }
-    if (model.enabledMonthPeriods & SDDDateMonthPeriodThird) {
-        buttons[2].backgroundColor = UIColor.greenColor;
-    } else {
-        buttons[2].backgroundColor = UIColor.grayColor;
-    }
-    return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    TitleHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"TitleHeaderView"];
-    headerView.yearLabel.text = [NSString stringWithFormat:@"%ld", self.viewModels[section].firstObject.yearNum];
-    return headerView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 52;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SDDDateItem *firstItem = self.viewModels.firstObject.firstObject;
-    SDDDateItem *lastItem = self.viewModels.lastObject.lastObject;
-    NSDate *startDate = [SDDDateProvider startFuzzyDateWithFirstItem:firstItem];
-    NSDate *endDate = [SDDDateProvider endFuzzyDateWithLastItem:lastItem];
-    if ([SDDDateProvider validateDate:NSDate.date minDate:startDate maxDate:endDate]) {
-        NSLog(@"nice");
-    }
-}
-
-- (void)setup {
-    NSDate *date = [SDDDateProvider dateFromString:@"2020-07-10" dateFormat:@"yyyy-MM-dd"];
-    self.viewModels = [SDDDateProvider presaleFuzzyDateItemsWithTodayDate:date];
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    
+    SZiZhiExampleParam *param = [[SZiZhiExampleParam alloc] init];
+    param.image = [UIImage imageNamed:@"3"];
+    param.imageURLString = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596958557326&di=aacae9b4876249658b488abadbf8a22a&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F21%2F14425%2Fdabb9c5fc143dd81_1366x768.jpg";
+    param.actionTitle = @"添加农药网销许可证";
+    param.resultHandler = ^(UIImage * _Nonnull image) {
+        NSLog(@"%@", image);
+    };
+    SupplyZiZhiExampleViewController *vc = [SupplyZiZhiExampleViewController viewControllerWithParam:param];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+//    SZiZhiImageBrowserParam *param = [[SZiZhiImageBrowserParam alloc] init];
+//    param.pageTitle = @"农药网销许可证";
+//    param.image = [UIImage imageNamed:@"3"];
+//    param.imageURLString = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596962789410&di=37f9738593183cfcc29d6c37d11e3f7d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F15%2F20180715000211_tumia.jpg";
+//    param.deleteHandler = ^{
+//
+//    };
+//    param.changeImageHandler = ^(UIImage * _Nonnull image) {
+//        NSLog(@"%@", image);
+//    };
+//    SupplyZiZhiImageBrowserViewController *vc = [SupplyZiZhiImageBrowserViewController viewControllerWithParam:param];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -10,12 +10,11 @@
 		6F4298C023AA1135005DBE38 /* YYZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4298BF23AA1135005DBE38 /* YYZKit.framework */; };
 		7D849B49756FE53215962EB5 /* libPods-YYZMainProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5591A26EADB3C0E584C9F455 /* libPods-YYZMainProjTests.a */; };
 		A56FAFFE7F068E584744BD57 /* libPods-YYZMainProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFE9175FE3CC60CF470003E /* libPods-YYZMainProj.a */; };
-		CE69CA8924CB01E3007F243A /* DateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69CA8724CB01E3007F243A /* DateTableViewCell.m */; };
-		CE69CA8A24CB01E3007F243A /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE69CA8824CB01E3007F243A /* DateTableViewCell.xib */; };
-		CE69CA9224CB048E007F243A /* TitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69CA9124CB048E007F243A /* TitleHeaderView.m */; };
-		CE69CA9424CB049A007F243A /* TitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE69CA9324CB049A007F243A /* TitleHeaderView.xib */; };
-		CE69CA9724CB072D007F243A /* YearMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69CA9624CB072D007F243A /* YearMonth.m */; };
-		CE7B69F424CC123200A62047 /* SDDDateProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B69F324CC123200A62047 /* SDDDateProvider.m */; };
+		CE2F774F24DE4CFA00C24D29 /* HNWMediaAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2F774E24DE4CF900C24D29 /* HNWMediaAuthorization.m */; };
+		CE2F775224DE4ECE00C24D29 /* HNWImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2F775124DE4ECE00C24D29 /* HNWImagePicker.m */; };
+		CE71C6B324DD8F9E002C92A9 /* HNWPhotoAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71C6B224DD8F9E002C92A9 /* HNWPhotoAuthorization.m */; };
+		CEA1B40424DEAB65001DCF75 /* SupplyZiZhiExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA1B40324DEAB65001DCF75 /* SupplyZiZhiExampleViewController.m */; };
+		CEA1B40724DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA1B40624DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.m */; };
 		CEDD27EA23A9B868007F5C19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD27E923A9B868007F5C19 /* AppDelegate.m */; };
 		CEDD27F023A9B868007F5C19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD27EF23A9B868007F5C19 /* ViewController.m */; };
 		CEDD27F323A9B868007F5C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD27F123A9B868007F5C19 /* Main.storyboard */; };
@@ -43,16 +42,16 @@
 		8B3BB54C26391A6594C7E495 /* Pods-YYZMainProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZMainProjTests.debug.xcconfig"; path = "Target Support Files/Pods-YYZMainProjTests/Pods-YYZMainProjTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C8D7A1308FCFF7A4186F20E /* Pods-YYZMainProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYZMainProj.release.xcconfig"; path = "Target Support Files/Pods-YYZMainProj/Pods-YYZMainProj.release.xcconfig"; sourceTree = "<group>"; };
 		BDFE9175FE3CC60CF470003E /* libPods-YYZMainProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYZMainProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE69CA8624CB01E3007F243A /* DateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateTableViewCell.h; sourceTree = "<group>"; };
-		CE69CA8724CB01E3007F243A /* DateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateTableViewCell.m; sourceTree = "<group>"; };
-		CE69CA8824CB01E3007F243A /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
-		CE69CA9024CB048E007F243A /* TitleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleHeaderView.h; sourceTree = "<group>"; };
-		CE69CA9124CB048E007F243A /* TitleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleHeaderView.m; sourceTree = "<group>"; };
-		CE69CA9324CB049A007F243A /* TitleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleHeaderView.xib; sourceTree = "<group>"; };
-		CE69CA9524CB072D007F243A /* YearMonth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YearMonth.h; sourceTree = "<group>"; };
-		CE69CA9624CB072D007F243A /* YearMonth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YearMonth.m; sourceTree = "<group>"; };
-		CE7B69F224CC123200A62047 /* SDDDateProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDDateProvider.h; sourceTree = "<group>"; };
-		CE7B69F324CC123200A62047 /* SDDDateProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDDDateProvider.m; sourceTree = "<group>"; };
+		CE2F774D24DE4CF900C24D29 /* HNWMediaAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNWMediaAuthorization.h; sourceTree = "<group>"; };
+		CE2F774E24DE4CF900C24D29 /* HNWMediaAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNWMediaAuthorization.m; sourceTree = "<group>"; };
+		CE2F775024DE4ECE00C24D29 /* HNWImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNWImagePicker.h; sourceTree = "<group>"; };
+		CE2F775124DE4ECE00C24D29 /* HNWImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNWImagePicker.m; sourceTree = "<group>"; };
+		CE71C6B124DD8F9E002C92A9 /* HNWPhotoAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNWPhotoAuthorization.h; sourceTree = "<group>"; };
+		CE71C6B224DD8F9E002C92A9 /* HNWPhotoAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HNWPhotoAuthorization.m; sourceTree = "<group>"; };
+		CEA1B40224DEAB65001DCF75 /* SupplyZiZhiExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplyZiZhiExampleViewController.h; sourceTree = "<group>"; };
+		CEA1B40324DEAB65001DCF75 /* SupplyZiZhiExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplyZiZhiExampleViewController.m; sourceTree = "<group>"; };
+		CEA1B40524DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplyZiZhiImageBrowserViewController.h; sourceTree = "<group>"; };
+		CEA1B40624DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplyZiZhiImageBrowserViewController.m; sourceTree = "<group>"; };
 		CEDD27E523A9B868007F5C19 /* YYZMainProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYZMainProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD27E823A9B868007F5C19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEDD27E923A9B868007F5C19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,16 +137,16 @@
 				CEDD27E923A9B868007F5C19 /* AppDelegate.m */,
 				CEDD27EE23A9B868007F5C19 /* ViewController.h */,
 				CEDD27EF23A9B868007F5C19 /* ViewController.m */,
-				CE7B69F224CC123200A62047 /* SDDDateProvider.h */,
-				CE7B69F324CC123200A62047 /* SDDDateProvider.m */,
-				CE69CA9524CB072D007F243A /* YearMonth.h */,
-				CE69CA9624CB072D007F243A /* YearMonth.m */,
-				CE69CA9024CB048E007F243A /* TitleHeaderView.h */,
-				CE69CA9124CB048E007F243A /* TitleHeaderView.m */,
-				CE69CA9324CB049A007F243A /* TitleHeaderView.xib */,
-				CE69CA8624CB01E3007F243A /* DateTableViewCell.h */,
-				CE69CA8724CB01E3007F243A /* DateTableViewCell.m */,
-				CE69CA8824CB01E3007F243A /* DateTableViewCell.xib */,
+				CEA1B40224DEAB65001DCF75 /* SupplyZiZhiExampleViewController.h */,
+				CEA1B40324DEAB65001DCF75 /* SupplyZiZhiExampleViewController.m */,
+				CEA1B40524DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.h */,
+				CEA1B40624DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.m */,
+				CE71C6B124DD8F9E002C92A9 /* HNWPhotoAuthorization.h */,
+				CE71C6B224DD8F9E002C92A9 /* HNWPhotoAuthorization.m */,
+				CE2F774D24DE4CF900C24D29 /* HNWMediaAuthorization.h */,
+				CE2F774E24DE4CF900C24D29 /* HNWMediaAuthorization.m */,
+				CE2F775024DE4ECE00C24D29 /* HNWImagePicker.h */,
+				CE2F775124DE4ECE00C24D29 /* HNWImagePicker.m */,
 				CEDD27F123A9B868007F5C19 /* Main.storyboard */,
 				CEDD27F423A9B869007F5C19 /* Assets.xcassets */,
 				CEDD27F623A9B869007F5C19 /* LaunchScreen.storyboard */,
@@ -248,11 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE69CA9424CB049A007F243A /* TitleHeaderView.xib in Resources */,
 				CEDD27F823A9B869007F5C19 /* LaunchScreen.storyboard in Resources */,
 				CEDD27F523A9B869007F5C19 /* Assets.xcassets in Resources */,
 				CEDD27F323A9B868007F5C19 /* Main.storyboard in Resources */,
-				CE69CA8A24CB01E3007F243A /* DateTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,13 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2F774F24DE4CFA00C24D29 /* HNWMediaAuthorization.m in Sources */,
+				CE2F775224DE4ECE00C24D29 /* HNWImagePicker.m in Sources */,
+				CE71C6B324DD8F9E002C92A9 /* HNWPhotoAuthorization.m in Sources */,
+				CEA1B40724DEAB7D001DCF75 /* SupplyZiZhiImageBrowserViewController.m in Sources */,
 				CEDD27F023A9B868007F5C19 /* ViewController.m in Sources */,
 				CEDD27EA23A9B868007F5C19 /* AppDelegate.m in Sources */,
-				CE7B69F424CC123200A62047 /* SDDDateProvider.m in Sources */,
+				CEA1B40424DEAB65001DCF75 /* SupplyZiZhiExampleViewController.m in Sources */,
 				CEDD27FB23A9B869007F5C19 /* main.m in Sources */,
-				CE69CA9224CB048E007F243A /* TitleHeaderView.m in Sources */,
-				CE69CA9724CB072D007F243A /* YearMonth.m in Sources */,
-				CE69CA8924CB01E3007F243A /* DateTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
