@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *themeImageViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *themeImageViewTop;
 
-@property (nonatomic, strong) HNWImagePicker *imagePicker;
 @property (nonatomic, strong) SZiZhiExampleParam *paramInput;
 @property (nonatomic) CGFloat imageReferHeight;
 @end
@@ -100,9 +99,9 @@
             NSLog(@"检测不到相机设备");
         } else if (status == HNWMediaAuthorizationStatusAuthorized) {
             __weak typeof(self) weakSelf = self;
-            [self.imagePicker presentCameraWithViewController:self cancelHandler:^(UIImagePickerController * _Nullable imagePickerController) {
+            [HNWImagePicker showCameraWithViewController:self cancelHandler:^(UIImagePickerController * _Nullable imagePickerController) {
                 [imagePickerController dismissViewControllerAnimated:YES completion:nil];
-            } selectImageHandler:^(UIImagePickerController * _Nonnull imagePickerController, UIImage * _Nullable image) {
+            } selectImageHandler:^(UIImagePickerController * _Nonnull imagePickerController, UIImage * _Nonnull image) {
                 __strong typeof(weakSelf) strongSelf = weakSelf;
                 [strongSelf.navigationController popViewControllerAnimated:NO];
                 [imagePickerController dismissViewControllerAnimated:YES completion:^{
@@ -117,9 +116,9 @@
 
 - (void)handlePhotoAction {
     __weak typeof(self) weakSelf = self;
-    [self.imagePicker presentPhotoLibraryWithViewController:self cancelHandler:^(UIImagePickerController * _Nullable imagePickerController) {
+    [HNWImagePicker showPhotoLibraryWithViewController:self cancelHandler:^(UIImagePickerController * _Nullable imagePickerController) {
         [imagePickerController dismissViewControllerAnimated:YES completion:nil];
-    } selectImageHandler:^(UIImagePickerController * _Nonnull imagePickerController, UIImage * _Nullable image) {
+    } selectImageHandler:^(UIImagePickerController * _Nonnull imagePickerController, UIImage * _Nonnull image) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popViewControllerAnimated:NO];
         [imagePickerController dismissViewControllerAnimated:YES completion:^{
@@ -159,14 +158,6 @@
     [self presentViewController:alertVC animated:YES completion:^{
         sender.userInteractionEnabled = YES;
     }];
-}
-
-#pragma mark - setter or getter
-- (HNWImagePicker *)imagePicker {
-    if (!_imagePicker) {
-        _imagePicker = [[HNWImagePicker alloc] init];
-    }
-    return _imagePicker;
 }
 
 @end

@@ -16,14 +16,14 @@ typedef void(^HNWImagePickerSelectImageHandler)(UIImagePickerController *imagePi
 @interface HNWImagePicker : NSObject
 
 /// 从相册选择图片，调用者负责 dismiss image picker controller
-- (void)presentPhotoLibraryWithViewController:(UIViewController *)presentingViewController
-                                cancelHandler:(HNWImagePickerCancelHandler)cancelHandler
-                           selectImageHandler:(HNWImagePickerSelectImageHandler)selectImageHandler;
++ (void)showPhotoLibraryWithViewController:(UIViewController *)presentingViewController
+                             cancelHandler:(HNWImagePickerCancelHandler)cancelHandler
+                        selectImageHandler:(HNWImagePickerSelectImageHandler)selectImageHandler;
 
 /// 拍照，调用者负责 dismiss image picker controller
-- (void)presentCameraWithViewController:(UIViewController *)presentingViewController
-                          cancelHandler:(HNWImagePickerCancelHandler)cancelHandler
-                     selectImageHandler:(HNWImagePickerSelectImageHandler)selectImageHandler;
++ (void)showCameraWithViewController:(UIViewController *)presentingViewController
+                       cancelHandler:(HNWImagePickerCancelHandler)cancelHandler
+                  selectImageHandler:(HNWImagePickerSelectImageHandler)selectImageHandler;
 
 @end
 
